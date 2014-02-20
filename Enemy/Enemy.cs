@@ -18,11 +18,11 @@ namespace Enemy
         {
             if (IsHitted == true)
             {
-                HitPoints--;
+                this.HitPoints--;
             }
             if (HitPoints == 0)
             {
-                IsDead = true;
+                this.IsDead = true;
             }
         }
     }
