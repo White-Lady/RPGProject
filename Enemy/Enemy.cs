@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace Enemy
 {
-    public abstract class Enemy
+    public abstract class Enemy : ICountingPoints, IDead
     {
+        public string Name { get; set; }
+        public int HitPoints { get; set; }
+        //public bool IsWinner { get; set; }
+        public bool IsHitted { get; set; }
+        public bool IsDead { get; set; }
+
+        public void DiscountHitPoints()
+        {
+            if (IsHitted == true)
+            {
+                HitPoints--;
+            }
+            if (HitPoints == 0)
+            {
+                IsDead = true;
+            }
+        }
     }
 }
