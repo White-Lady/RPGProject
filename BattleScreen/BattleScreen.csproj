@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FC9CFBCC-AD19-4CD4-A6B2-68CBF64C37E1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{473D5ACE-94C2-4B1F-B72D-481B057B8D72}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Game</RootNamespace>
-    <AssemblyName>Game</AssemblyName>
+    <RootNamespace>BattleScreen</RootNamespace>
+    <AssemblyName>BattleScreen</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,24 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game.cs" />
+    <Compile Include="BattleScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BattleScreen\BattleScreen.csproj">
-      <Project>{473d5ace-94c2-4b1f-b72d-481b057b8d72}</Project>
-      <Name>BattleScreen</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DrawEngine\DrawEngine.csproj">
       <Project>{fe258cc8-9fe2-4bcc-98b3-14ecf491ab5c}</Project>
       <Name>DrawEngine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Enemy\Enemy.csproj">
-      <Project>{b27af5fb-4e95-445a-b38a-ef1365aa22d0}</Project>
-      <Name>Enemy</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
