@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FC9CFBCC-AD19-4CD4-A6B2-68CBF64C37E1}</ProjectGuid>
+    <ProjectGuid>{B27AF5FB-4E95-445A-B38A-EF1365AA22D0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Game</RootNamespace>
-    <AssemblyName>Game</AssemblyName>
+    <RootNamespace>Enemy</RootNamespace>
+    <AssemblyName>Enemy</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="EnemyMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,10 +52,6 @@
     <ProjectReference Include="..\DrawEngine\DrawEngine.csproj">
       <Project>{fe258cc8-9fe2-4bcc-98b3-14ecf491ab5c}</Project>
       <Name>DrawEngine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Enemy\Enemy.csproj">
-      <Project>{b27af5fb-4e95-445a-b38a-ef1365aa22d0}</Project>
-      <Name>Enemy</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
