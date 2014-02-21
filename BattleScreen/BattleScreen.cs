@@ -7,6 +7,7 @@
         public static void StartBattle()
         {
             DrawEngine.DrawBattleScreen();
+
         }
     }
 }
