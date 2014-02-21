@@ -3,30 +3,36 @@
     using System;
     using System.Collections.Generic;
     using BattleScreen;
+
     public class Player
     {
 
-        public const char playerChar = (char)2;
-        public const ConsoleColor charColor = ConsoleColor.Blue;
+        public const char PlayerChar = (char)2;
+        public const ConsoleColor CharColor = ConsoleColor.Blue;
+        private Position positionToBeChecked;
         public Player(int x, int y)
         {
             this.XPosition = x;
             this.YPosition = y;
+            this.positionToBeChecked = new Position(x, y);
         }
+
         public List<Hero> ListOfHeroes { get; set; }
         public int Experience { get; set; }
         public int Gold { get; set; }
 
         public int XPosition { get; set; }
         public int YPosition { get; set; }
-        // public List<Item> Inventory {get; set; } 
+        // public List<Item> Inventory {get; set; }
+ 
         public void Move(ConsoleKeyInfo pressedKey)
         {
             if (pressedKey.Key == ConsoleKey.UpArrow)
             {
                 if (YPosition > 0)
                 {
-                    CheckForCollision(this.XPosition,this.YPosition - 1);
+                    positionToBeChecked.Y--;
+                    CheckForCollision(positionToBeChecked);
                     YPosition--;
                 }
             }
@@ -34,7 +40,8 @@
             {
                 if (YPosition < Console.BufferHeight - 1)
                 {
-                    CheckForCollision(this.XPosition, this.YPosition + 1);
+                    positionToBeChecked.Y++;
+                    CheckForCollision(positionToBeChecked);
                     YPosition++;
                 }
             }
@@ -42,7 +49,8 @@
             {
                 if (XPosition > 0)
                 {
-                    CheckForCollision(this.XPosition - 1, this.YPosition);
+                    positionToBeChecked.X--;
+                    CheckForCollision(positionToBeChecked);
                     XPosition--;
                 }
             }
@@ -50,14 +58,23 @@
             {
                 if (XPosition < Console.BufferWidth - 1)
                 {
-                    CheckForCollision(this.XPosition + 1, this.YPosition);
+                    positionToBeChecked.X++;
+                    CheckForCollision(positionToBeChecked);
                     XPosition++;
                 }
             }
         }
-        private void CheckForCollision(int posX, int posY)
+        
+        private void CheckForCollision(Position pos)
         {
-            if (posX == 10 && posY == 30)
+            //if(map[pos.Y, pos.X] == Map.Shop)
+            //{
+            //      Shop();
+            //}
+
+            //To be checked the position on the world map
+            //if(map[pos.y, pos.x] == Map.Shop...Map.Enemy...Map.Empty....Map.Wall)
+            if (pos.X == 10 && pos.Y == 30)
             {
                 BattleScreen.StartBattle();
                 XPosition++;

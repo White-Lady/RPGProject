@@ -6,13 +6,35 @@
         private int hitPoints;
         private int attackPoints;
         private int defensePoints;
-        public bool IsDead {get;set;}
 
+        protected Hero(int hP, int aP, int dP)
+        {
+            this.HitPoints = hP;
+            this.AttackPoints = aP;
+            this.DefensePoints = dP;
+            this.IsDead = false;
+        }
+
+        public bool IsDead { get; set;}
+
+        public int DefensePoints
+        {
+            get
+            {
+                return this.defensePoints;
+            }
+            private set
+            {
+                this.defensePoints = value;
+            }
+        }
         public int AttackPoints
         {
             get { return this.attackPoints; }
             private set { this.attackPoints = value; }
         }
+
+        //Maybe without a name
         public string Name
         {
             get;
