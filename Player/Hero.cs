@@ -7,7 +7,8 @@
         private int hitPoints;
         private int attackPoints;
         private int defensePoints;
-        public Item[] itemSlots
+        private Item[] inventory = new Item[6];
+
         protected Hero(int hP, int aP, int dP)
         {
             this.HitPoints = hP;
@@ -16,8 +17,13 @@
             this.IsDead = false;
         }
 
-        public bool IsDead { get; set;}
-
+        public Item[] Inventory
+        {
+            get { return this.inventory; }
+            set { this.inventory = value; }
+        }
+        public bool IsDead { get; set; }
+        public int Experience { get; set; }
         public int DefensePoints
         {
             get
@@ -33,13 +39,6 @@
         {
             get { return this.attackPoints; }
             private set { this.attackPoints = value; }
-        }
-
-        //Maybe without a name
-        public string Name
-        {
-            get;
-            set;
         }
         public int HitPoints
         {

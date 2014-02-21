@@ -5,6 +5,6 @@
     using Item;
     public class Shop
     {
-        public List<Item> ShopItems { get; set; }
+        
     }
 }

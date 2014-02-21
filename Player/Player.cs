@@ -18,12 +18,10 @@
         }
 
         public List<Hero> ListOfHeroes { get; set; }
-        public int Experience { get; set; }
         public int Gold { get; set; }
 
         public int XPosition { get; set; }
         public int YPosition { get; set; }
-        // public List<Item> Inventory {get; set; }
  
         public void Move(ConsoleKeyInfo pressedKey)
         {
