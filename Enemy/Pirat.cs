@@ -16,5 +16,10 @@
                 HitPoints = 10;//The number is just for example.
             }
         }
+
+        public Pirat(int hP, int aP, int dP) 
+            : base(hP, aP, dP)
+        {
+        }
     }
 }

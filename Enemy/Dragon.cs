@@ -15,5 +15,9 @@
                 HitPoints = 12;//The number is just for example.
             }
         }
+        public Dragon(int hP, int aP, int dP) 
+            : base(hP, aP, dP)
+        {
+        }
     }
 }

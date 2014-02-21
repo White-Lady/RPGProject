@@ -5,6 +5,6 @@
     interface ICountingPoints
     {
         bool IsHitted { get; set; }
-        void DiscountHitPoints();
+        void DiscountHitPoints(bool isHitted);
     }
 }
