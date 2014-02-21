@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enemy", "Enemy\Enemy.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleScreen", "BattleScreen\BattleScreen.csproj", "{473D5ACE-94C2-4B1F-B72D-481B057B8D72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player\Player.csproj", "{87DB7FB8-15B9-4CF7-94B5-41D271F796AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player\Player.csproj", "{9ABDB40E-5069-4541-86C2-031EE2E3C64D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{473D5ACE-94C2-4B1F-B72D-481B057B8D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{473D5ACE-94C2-4B1F-B72D-481B057B8D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{473D5ACE-94C2-4B1F-B72D-481B057B8D72}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87DB7FB8-15B9-4CF7-94B5-41D271F796AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87DB7FB8-15B9-4CF7-94B5-41D271F796AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87DB7FB8-15B9-4CF7-94B5-41D271F796AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87DB7FB8-15B9-4CF7-94B5-41D271F796AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ABDB40E-5069-4541-86C2-031EE2E3C64D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ABDB40E-5069-4541-86C2-031EE2E3C64D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ABDB40E-5069-4541-86C2-031EE2E3C64D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ABDB40E-5069-4541-86C2-031EE2E3C64D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
