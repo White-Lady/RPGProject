@@ -2,7 +2,7 @@
 
 namespace DrawEngine
 {
-    public class DrawEngine
+    public static class DrawEngine
     {
         //Displays a single character at the given console coordinates
         public static void PrintCharOnPosition(int posX, int posY, char c, ConsoleColor color = ConsoleColor.White)

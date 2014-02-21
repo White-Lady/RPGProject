@@ -1,12 +1,13 @@
 ﻿namespace Player
 {
     using System;
+    using Item;
     public abstract class Hero
     {
         private int hitPoints;
         private int attackPoints;
         private int defensePoints;
-
+        public Item[] itemSlots
         protected Hero(int hP, int aP, int dP)
         {
             this.HitPoints = hP;
