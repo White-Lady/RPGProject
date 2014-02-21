@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Enemy
+﻿namespace Enemy
 {
+    using System;
+
     public abstract class Enemy : ICountingPoints, IDead
     {
         public string Name { get; set; }
