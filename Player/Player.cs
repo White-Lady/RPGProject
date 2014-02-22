@@ -10,6 +10,7 @@
         public const char PlayerChar = (char)2;
         public const ConsoleColor CharColor = ConsoleColor.Blue;
         private Position positionToBeChecked;
+
         public Player(int x, int y)
         {
             this.XPosition = x;

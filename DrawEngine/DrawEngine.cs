@@ -1,4 +1,5 @@
 ﻿using System;
+using GameWorld;
 
 namespace DrawEngine
 {
@@ -35,6 +36,40 @@ namespace DrawEngine
             Console.ForegroundColor = color;
             Console.Write(str);
         }
+
+        public static void DrawWorld(CellState[,] world)
+        {
+            for (int i = 0; i < world.GetLength(0); i++)
+            {
+                for (int j = 0; j < world.GetLength(1); j++)
+                {
+                    char charToBeDrawn = ' ';
+                    ConsoleColor elementColor = ConsoleColor.White;
+
+                    switch (world[i,j])
+                    {
+                        case CellState.EmptySpace:
+                            break;
+                        case CellState.Enemy:
+                            charToBeDrawn = '*';
+                            elementColor = ConsoleColor.Red;
+                            break;
+                        case CellState.Shop:
+                            charToBeDrawn = '$';
+                            elementColor = ConsoleColor.Yellow;
+                            break;
+                        case CellState.Wall:
+                            charToBeDrawn = '#';
+                            break;
+                        default:
+                            break;
+                    }
+
+                    PrintCharAtPosition(j, i, charToBeDrawn, elementColor);
+                }
+            }
+        }
+
         public static void DrawBattleScreen()
         {
             EnemyWindow();

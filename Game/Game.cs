@@ -5,6 +5,7 @@
     using BattleScreen;
     using System.Threading;
     using Player;
+    using GameWorld;
 
     class Game
     {
@@ -16,6 +17,10 @@
             // Set console dimensions
             Console.BufferHeight = Console.WindowHeight = 50;
             Console.BufferWidth = Console.WindowWidth = 120;
+
+            //Create a world
+            World world = new World(Console.WindowHeight, Console.WindowWidth);
+            world.ReadWorldFromFile("testmap.txt");
 
             //Create a new player
             Player player = new Player(1, 1);
@@ -32,8 +37,11 @@
                     player.Move(pressedKey);
                 }
 
+                //TODO: Fix blinking screen when drawing... everything
+                //DrawEngine.DrawWorld(world.WorldMatrix);
+
                 DrawEngine.PrintCharAtPosition(player.XPosition, player.YPosition, (char)2, ConsoleColor.Blue);
-                DrawEngine.PrintCharAtPosition(10, 30, 'B', ConsoleColor.Red);
+                //DrawEngine.PrintCharAtPosition(10, 30, 'B', ConsoleColor.Red);
                 
                 Thread.Sleep(50);
                 Console.Clear();
