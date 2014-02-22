@@ -32,8 +32,8 @@
                     player.Move(pressedKey);
                 }
 
-                DrawEngine.PrintCharOnPosition(player.XPosition, player.YPosition, (char)2, ConsoleColor.Blue);
-                DrawEngine.PrintCharOnPosition(10, 30, 'B', ConsoleColor.Red);
+                DrawEngine.PrintCharAtPosition(player.XPosition, player.YPosition, (char)2, ConsoleColor.Blue);
+                DrawEngine.PrintCharAtPosition(10, 30, 'B', ConsoleColor.Red);
                 
                 Thread.Sleep(50);
                 Console.Clear();
