@@ -13,7 +13,7 @@ namespace DrawEngine
         }
 
         //Displays a string at the given console coordinates
-        public static void PrintStringOnPosition(int posX, int posY, string str, ConsoleColor color = ConsoleColor.White)
+        public static void PrintStringAtPosition(int posX, int posY, string str, ConsoleColor color = ConsoleColor.White)
         {
             Console.SetCursorPosition(posX, posY);
             Console.ForegroundColor = color;
