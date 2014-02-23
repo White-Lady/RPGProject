@@ -6,7 +6,6 @@
     using System.Threading;
     using Player;
     using GameWorld;
-    using Enemy;
 
     class Game
     {
@@ -26,7 +25,6 @@
             //Create a new player
             Player player = new Player(1, 1);
 
-
             while (true)
             {
                 if (Console.KeyAvailable)
@@ -44,7 +42,6 @@
 
                 DrawEngine.PrintCharAtPosition(player.XPosition, player.YPosition, (char)2, ConsoleColor.Blue);
                 //DrawEngine.PrintCharAtPosition(10, 30, 'B', ConsoleColor.Red);
-
                 
                 Thread.Sleep(50);
                 Console.Clear();
