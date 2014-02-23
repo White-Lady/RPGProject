@@ -22,6 +22,65 @@ namespace DrawEngine
         private const int FightMenuWindowHeight = HeroesWindowHeight + 17;
         //private static DisplayChar[,] buffer;
 
+        private static string[,] wolfImage = new string[,] 
+        {
+            {"                                 ..     "},
+            {"                              ......    "},
+            {"                            ..........  "},
+            {"                           ............ "},
+            {"                           ..........   "},
+            {"                     ...............    "},
+            {"            .......................     "},
+            {"          .........................     "},
+            {"          ........................      "},
+            {"         ........................       "},
+            {"        .........................       "},
+            {"       ...........     ..........       "},
+            {"      ...........          .....        "},
+            {"     ...........           .....        "},
+            {"    ...  ...  ...           ....        "},
+            {"  ...     ..   ..           ....        "},
+            {"          ..    ...          ....       "},
+            {"           ...   ...          .....     "},
+        };
+
+        private static string[,] dragonImage =
+        {
+             {"                    ,     _,    "},
+             {"                   #\\`-\"-`/     "},
+             {"                   #/   o (o    "},
+             {"                  #/ \\__   '._   "},
+             {"  ,_#_#          #/  /=/`-. _\") "},
+             {"   '-.`\\#      #/  /=(_.. `-`. "},
+             {"      \\ `\\#  #/  -.'`_\\\\`_\\\\ "},
+             {"       ;  \\# #/ '.__.'=\\_.'    "},
+             {"       |   '-#;    _|====\\_     "},
+             {"       ;      '  /`  `\\==| \\    "},
+             {"        \\     .        \\=| /    "},
+             {"         '-.._         // /_    "},
+             {"              `)-.    `----._\\  "},
+             {"              <_________\\_\\_\\   "}
+        };
+
+        private static string[,] piratImage = 
+        {
+            {"             _,-._    "},
+            {"            ; ___ :   "},       
+            {"        ,--' (. .) '--.__  "}, 
+            {"      _;      |||        \\ "},
+            {"     '._,-----''';=.____,\"  "},  
+            {"       /// < o>   |##|    "},    
+            {"       (o        \\`--'    "},   
+            {"      ///\\ >>>>  _\\ <<<<   "},
+            {"     --._>>>>>>>><<<<<<<<  "},
+            {"     ___() >>>[||||]<<<<   "},
+            {"     `--'>>>>>>>><<<<<<<   "},
+            {"          >>>>>>><<<<<<   "},
+            {"            >>>>><<<<<   "},
+            {"              >>><<<    "},
+            {"               >><<   "},
+        };
+
         //Displays a single character at the given console coordinates
         public static void PrintCharAtPosition(int posX, int posY, char c, ConsoleColor color = ConsoleColor.White)
         {
@@ -135,6 +194,49 @@ namespace DrawEngine
             HeroTwoStatsWindow();
             HeroThreeStatsWindow();
             HeroFourStatsWindow();
+            DrawDragon();
+        }
+
+        public static void DrawWolf()
+        {
+            Console.SetCursorPosition(StartingColumn + 1, StartingRow + 4);
+            for (int row = 0; row < wolfImage.GetLength(0); row++)
+            {
+                for (int col = 0; col < wolfImage.GetLength(1); col++)
+                {
+                    Console.Write(wolfImage[row, col]);
+                }
+                Console.WriteLine();
+                Console.SetCursorPosition(StartingColumn + 1, StartingRow + 4 + (row + 1));
+            }
+        }
+
+        public static void DrawPirat()
+        {
+            Console.SetCursorPosition(StartingColumn + 1, StartingRow + 4);
+            for (int row = 0; row < piratImage.GetLength(0); row++)
+            {
+                for (int col = 0; col < piratImage.GetLength(1); col++)
+                {
+                    Console.Write(piratImage[row, col]);
+                }
+                Console.WriteLine();
+                Console.SetCursorPosition(StartingColumn + 1, StartingRow + 4 + (row + 1));
+            }
+        }
+
+        public static void DrawDragon()
+        {
+            Console.SetCursorPosition(StartingColumn + 1, StartingRow + 4);
+            for (int row = 0; row < dragonImage.GetLength(0); row++)
+            {
+                for (int col = 0; col < dragonImage.GetLength(1); col++)
+                {
+                    Console.Write(dragonImage[row, col]);
+                }
+                Console.WriteLine();
+                Console.SetCursorPosition(StartingColumn + 1, StartingRow + 4 + (row + 1));
+            }
         }
 
         public static void EnemyWindow()
