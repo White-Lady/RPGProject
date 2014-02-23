@@ -29,10 +29,11 @@
             get { return this.inventory; }
             set { this.inventory = value; }
         }
+
         public bool IsDead { get; set; }
-        public int Experience { get; }
-       
-        private int Level { get; }
+        public int Experience { get; set; }
+        private int Level { get; set;  }
+
         public int DefensePoints
         {
             get { return this.defensePoints; }
