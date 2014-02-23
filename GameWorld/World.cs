@@ -4,6 +4,7 @@ namespace GameWorld
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Text;
     //xlen between 0 and 40 , yLen between 0 and 100 px
 
     public class World
@@ -16,7 +17,7 @@ namespace GameWorld
 
         public World(int xLen, int yLen /*, List<Place> places*/)
         {
-            this.WorldMatrix = new CellState[Console.WindowHeight,Console.WindowWidth];
+            this.WorldMatrix = new CellState[xLen, yLen];
 
             //if ((this.xLen > 40) || (this.xLen < 0))
             //{
@@ -107,8 +108,6 @@ namespace GameWorld
                     {
                         if (readedLine != null)
                         {
-                            //for (int character = 0; character < readedLine.Length; character++)
-                            //{
                                 CellState cellValue;
 
                                 switch (readedLine[cols])
@@ -128,7 +127,6 @@ namespace GameWorld
                                 }
 
                                 this.worldMatrix[rows, cols] = cellValue;
-                            //}
                         }
                     }
                 }
@@ -142,6 +140,45 @@ namespace GameWorld
                 item.Draw();
             }
             Console.SetCursorPosition(1, 1);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder result = new StringBuilder();
+
+            for (int rows = 0; rows < this.WorldMatrix.GetLength(0); rows++)
+            {
+                for (int cols = 0; cols < this.WorldMatrix.GetLength(1); cols++)
+                {
+                    char charToBeDrawn = ' ';
+
+                    switch (this.WorldMatrix[rows, cols])
+                    {
+                        case CellState.EmptySpace:
+                            break;
+                        case CellState.Enemy:
+                            charToBeDrawn = '*';
+                            break;
+                        case CellState.Shop:
+                            charToBeDrawn = '$';
+                            break;
+                        case CellState.Wall:
+                            charToBeDrawn = '#';
+                            break;
+                        default:
+                            break;
+                    }
+
+                    result.Append(charToBeDrawn);
+                }
+
+                if (rows != this.WorldMatrix.GetLength(0) - 1)
+                {
+                    result.Append('\n');
+                }
+            }
+
+            return result.ToString();
         }
 
     }

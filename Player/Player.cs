@@ -10,6 +10,7 @@
         public const char PlayerChar = (char)2;
         public const ConsoleColor CharColor = ConsoleColor.Blue;
         private Position positionToBeChecked;
+        private Position oldPosition;
 
         public Player(int x, int y)
         {
@@ -23,6 +24,18 @@
 
         public int XPosition { get; set; }
         public int YPosition { get; set; }
+
+        public Position OldPosition
+        { 
+            get
+            {
+                return this.oldPosition;
+            }
+            set
+            {
+                this.oldPosition = value;
+            }
+        }
  
         public void Move(ConsoleKeyInfo pressedKey)
         {
@@ -32,15 +45,19 @@
                 {
                     positionToBeChecked.Y--;
                     CheckForCollision(positionToBeChecked);
+                    oldPosition.X = XPosition;
+                    oldPosition.Y = YPosition;
                     YPosition--;
                 }
             }
             else if (pressedKey.Key == ConsoleKey.DownArrow)
             {
-                if (YPosition < Console.BufferHeight - 1)
+                if (YPosition < Console.WindowHeight - 1)
                 {
                     positionToBeChecked.Y++;
                     CheckForCollision(positionToBeChecked);
+                    oldPosition.X = XPosition;
+                    oldPosition.Y = YPosition;
                     YPosition++;
                 }
             }
@@ -50,15 +67,19 @@
                 {
                     positionToBeChecked.X--;
                     CheckForCollision(positionToBeChecked);
+                    oldPosition.X = XPosition;
+                    oldPosition.Y = YPosition;
                     XPosition--;
                 }
             }
             else if (pressedKey.Key == ConsoleKey.RightArrow)
             {
-                if (XPosition < Console.BufferWidth - 1)
+                if (XPosition < Console.WindowWidth - 1)
                 {
                     positionToBeChecked.X++;
                     CheckForCollision(positionToBeChecked);
+                    oldPosition.X = XPosition;
+                    oldPosition.Y = YPosition;
                     XPosition++;
                 }
             }
