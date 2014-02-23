@@ -52,7 +52,7 @@
                     {
                         if (heroOnTurn == Player.HeroesOfPlayer.Length)
                         {
-                            heroOnTurn = 0;
+                            heroOnTurn = 1;
                         }
 
                         Console.SetCursorPosition(6, 30);
