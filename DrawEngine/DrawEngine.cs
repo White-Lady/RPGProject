@@ -20,16 +20,13 @@ namespace DrawEngine
         private const int EnemyNameWindowHeight = EnemyWindowHeight + 17;
         private const int FightMenuWindowWidth = EnemyNameWindowWidth + GapBetweenWindows + 54;
         private const int FightMenuWindowHeight = HeroesWindowHeight + 17;
-<<<<<<< HEAD
         private const int fighterHeight = StartingRow + 2;
         private const int fighterWidth = 12;
         private const int blackMageHeight = fighterHeight + 5;
         private const int blackMageWidth = 23;
         private const int whiteMageHeight = blackMageHeight + 5;
         private const int whiteMageWidth = 20;
-=======
         //private static DisplayChar[,] buffer;
->>>>>>> b76b44cbceee0b859a4dcc8e04616cd8f4eaa021
 
         private static string[,] wolfImage = new string[,] 
         {

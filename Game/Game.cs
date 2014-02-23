@@ -26,7 +26,6 @@
             Player player = new Player(1, 1);
 
             DrawEngine.DrawWorld(world.WorldMatrix);
-            //Console.WriteLine(world);
 
             while (true)
             {
@@ -42,13 +41,9 @@
                     DrawEngine.EraseCharOnPosition(player.OldPosition.X, player.OldPosition.Y);
                 }
 
-                //TODO: Fix blinking screen when drawing... everything
-                //Console.WriteLine(world);
-
                 DrawEngine.PrintCharAtPosition(player.XPosition, player.YPosition, (char)2, ConsoleColor.Blue);
                 //DrawEngine.PrintCharAtPosition(10, 30, 'B', ConsoleColor.Red);
                                 
-                //Console.Clear();                
                 Thread.Sleep(50);
             }
         }
