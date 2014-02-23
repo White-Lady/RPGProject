@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using BattleScreen;
+    using Shop;
 
     public class Player
     {
@@ -19,7 +20,7 @@
             this.positionToBeChecked = new Position(x, y);
         }
 
-        public List<Hero> ListOfHeroes { get; set; }
+        public Hero[] HeroesOfPlayer { get; set; }
         public int Gold { get; set; }
 
         public int XPosition { get; set; }
@@ -101,5 +102,48 @@
             }
             //check if its on shop, wall or some other object in the world
         }
+        public void BuyItem(byte NoOfHero, byte SlotInInventory, uint NoOfItem)
+        {
+            if (HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory] == null)
+            {
+                // Checks if player has enough money.
+                if (this.Gold < Shop.ShopItems[int.Parse(NoOfItem.ToString())].Price)
+                {
+                    Console.WriteLine("You dont have enough money to buy this item.");
+                }
+                else
+                {
+        // If he has, item is added to inventory and benefits from the item are added to hero's stats and gold is taken from player.
+                    HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory] = Shop.ShopItems[int.Parse(NoOfItem.ToString())];
+                    HeroesOfPlayer[NoOfHero].attackPoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalAP;
+                    HeroesOfPlayer[NoOfHero].defensePoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalDP;
+                    HeroesOfPlayer[NoOfHero].hitPoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalHP;
+                    HeroesOfPlayer[NoOfHero].abilityPowerPoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalAPP;
+                    this.Gold -= Shop.ShopItems[int.Parse(NoOfItem.ToString())].Price;
+                }
+            }
+            else if (HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory] != null)
+            {
+                Console.WriteLine("The slot is already taken, try selling the item and try again.");
+            }
+        }
+        public void SellItem(byte SlotInInventory, byte NoOfHero)
+        {
+            if (HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory] != null)
+            {
+                HeroesOfPlayer[NoOfHero].attackPoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalAP;
+                HeroesOfPlayer[NoOfHero].defensePoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalDP;
+                HeroesOfPlayer[NoOfHero].hitPoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalHP;
+                HeroesOfPlayer[NoOfHero].abilityPowerPoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalAPP;
+                this.Gold += HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].Price;
+                HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory] = null;
+            }
+            else if (HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory] == null)
+            {
+                Console.WriteLine("The item slot is empty, nothing to sell.");
+            }
+        }
+
+
     }
 }

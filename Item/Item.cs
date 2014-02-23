@@ -1,10 +1,12 @@
 ﻿namespace Item
 {
-    public abstract class Item
+    public abstract class Item 
     {
-        public int additionalAP { get; set; }
-        public int additionalAPP { get; set; }
-        public int additionalHP { get; set; }
+        public int AdditionalAP { get; set; }
+        public int AdditionalAPP { get; set; }
+        public int AdditionalHP { get; set; }
+        public int AdditionalDP { get; set; }
+        public int Price { get; set; }
 
     }
 }
