@@ -20,12 +20,16 @@ namespace DrawEngine
         private const int EnemyNameWindowHeight = EnemyWindowHeight + 17;
         private const int FightMenuWindowWidth = EnemyNameWindowWidth + GapBetweenWindows + 54;
         private const int FightMenuWindowHeight = HeroesWindowHeight + 17;
+<<<<<<< HEAD
         private const int fighterHeight = StartingRow + 2;
         private const int fighterWidth = 12;
         private const int blackMageHeight = fighterHeight + 5;
         private const int blackMageWidth = 23;
         private const int whiteMageHeight = blackMageHeight + 5;
         private const int whiteMageWidth = 20;
+=======
+        //private static DisplayChar[,] buffer;
+>>>>>>> b76b44cbceee0b859a4dcc8e04616cd8f4eaa021
 
         private static string[,] wolfImage = new string[,] 
         {
@@ -127,18 +131,69 @@ namespace DrawEngine
             Console.Write(str);
         }
 
+        public static void EraseCharOnPosition(int posX, int posY)
+        {
+            Console.SetCursorPosition(posX, posY);
+            Console.Write(' ');
+        }
+
+        //private static void FillBuffer(CellState[,] world)
+        //{
+        //    buffer = new DisplayChar[world.GetLength(0), world.GetLength(1)];
+
+        //    for (int i = 0; i < world.GetLength(0); i++)
+        //    {
+        //        for (int j = 0; j < world.GetLength(1); j++)
+        //        {
+        //            char charToBeDrawn = ' ';
+        //            ConsoleColor elementColor = ConsoleColor.White;
+
+        //            switch (world[i, j])
+        //            {
+        //                case CellState.EmptySpace:
+        //                    elementColor = ConsoleColor.White;
+        //                    break;
+        //                case CellState.Enemy:
+        //                    charToBeDrawn = '*';
+        //                    elementColor = ConsoleColor.Red;
+        //                    break;
+        //                case CellState.Shop:
+        //                    charToBeDrawn = '$';
+        //                    elementColor = ConsoleColor.Yellow;
+        //                    break;
+        //                case CellState.Wall:
+        //                    charToBeDrawn = ';';
+        //                    elementColor = ConsoleColor.White;
+        //                    break;
+        //                default:
+        //                    break;
+        //            }
+
+        //            buffer[i, j].Character = charToBeDrawn;
+        //            buffer[i, j].Color = elementColor;
+        //        }
+        //    }
+        //}
+
         public static void DrawWorld(CellState[,] world)
         {
+            Console.SetCursorPosition(0, 0);
+            //FillBuffer(world);
+
             for (int i = 0; i < world.GetLength(0); i++)
             {
                 for (int j = 0; j < world.GetLength(1); j++)
                 {
+                    //Console.ForegroundColor = buffer[i,j].Color;
+                    //Console.Write(buffer[i, j].Character);
+
                     char charToBeDrawn = ' ';
                     ConsoleColor elementColor = ConsoleColor.White;
 
-                    switch (world[i,j])
+                    switch (world[i, j])
                     {
                         case CellState.EmptySpace:
+                            elementColor = ConsoleColor.White;
                             break;
                         case CellState.Enemy:
                             charToBeDrawn = '*';
@@ -150,12 +205,15 @@ namespace DrawEngine
                             break;
                         case CellState.Wall:
                             charToBeDrawn = '#';
+                            elementColor = ConsoleColor.White;
                             break;
                         default:
                             break;
                     }
 
-                    PrintCharAtPosition(j, i, charToBeDrawn, elementColor);
+                    Console.ForegroundColor = elementColor;
+                    Console.Write(charToBeDrawn);
+                    //PrintCharAtPosition(j, i, charToBeDrawn, elementColor);
                 }
             }
         }
