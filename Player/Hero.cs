@@ -13,7 +13,7 @@
         private int level;
         private Item[] inventory = new Item[6];
 
-        protected Hero(int hP, int aP, int dP)
+        protected Hero(int hP, int aP, int dP, int abilityPower)
         {
             this.HitPoints = hP;
             this.AttackPoints = aP;
@@ -22,7 +22,10 @@
             this.exp_to_level = 100;
             this.level = 1;
             this.IsDead = false;
+            this.AbilityPowerPoints = abilityPower;
         }
+
+        public int AbilityPowerPoints { get; set; }
 
         public Item[] Inventory
         {
@@ -37,18 +40,18 @@
         public int DefensePoints
         {
             get { return this.defensePoints; }
-            private set { this.defensePoints = value; }
+            set { this.defensePoints = value; }
         }
 
         public int AttackPoints
         {
             get { return this.attackPoints; }
-            private set { this.attackPoints = value; }
+            set { this.attackPoints = value; }
         }
         public int HitPoints
         {
             get { return this.hitPoints; }
-            private set { this.hitPoints = value; }
+            set { this.hitPoints = value; }
         }
 
         //method for gaining experience

@@ -113,12 +113,12 @@
                 }
                 else
                 {
-        // If he has, item is added to inventory and benefits from the item are added to hero's stats and gold is taken from player.
+                    // If he has, item is added to inventory and benefits from the item are added to hero's stats and gold is taken from player.
                     HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory] = Shop.ShopItems[int.Parse(NoOfItem.ToString())];
-                    HeroesOfPlayer[NoOfHero].attackPoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalAP;
-                    HeroesOfPlayer[NoOfHero].defensePoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalDP;
-                    HeroesOfPlayer[NoOfHero].hitPoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalHP;
-                    HeroesOfPlayer[NoOfHero].abilityPowerPoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalAPP;
+                    HeroesOfPlayer[NoOfHero].AttackPoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalAP;
+                    HeroesOfPlayer[NoOfHero].DefensePoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalDP;
+                    HeroesOfPlayer[NoOfHero].HitPoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalHP;
+                    HeroesOfPlayer[NoOfHero].AbilityPowerPoints += Shop.ShopItems[int.Parse(NoOfItem.ToString())].AdditionalAPP;
                     this.Gold -= Shop.ShopItems[int.Parse(NoOfItem.ToString())].Price;
                 }
             }
@@ -131,10 +131,10 @@
         {
             if (HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory] != null)
             {
-                HeroesOfPlayer[NoOfHero].attackPoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalAP;
-                HeroesOfPlayer[NoOfHero].defensePoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalDP;
-                HeroesOfPlayer[NoOfHero].hitPoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalHP;
-                HeroesOfPlayer[NoOfHero].abilityPowerPoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalAPP;
+                HeroesOfPlayer[NoOfHero].AttackPoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalAP;
+                HeroesOfPlayer[NoOfHero].DefensePoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalDP;
+                HeroesOfPlayer[NoOfHero].HitPoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalHP;
+                HeroesOfPlayer[NoOfHero].AbilityPowerPoints -= HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].AdditionalAPP;
                 this.Gold += HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory].Price;
                 HeroesOfPlayer[NoOfHero].Inventory[SlotInInventory] = null;
             }

@@ -6,12 +6,11 @@
     {
 
         public Mage(int hP, int aP, int dP, int mana, int abilityPower)
-            : base(hP, aP, dP,abilityPower)
+            : base(hP, aP, dP, abilityPower)
         {
             this.Mana = mana;
             this.AbilityPowerPoints = abilityPower;
         }
-        public int AbilityPowerPoints { get; set; }
         public int Mana { get; set; }
     }
 }

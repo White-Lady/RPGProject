@@ -3,10 +3,10 @@
     using System;
     public class Fighter : Hero
     {
-        public Fighter(int hP, int aP, int dP, int aPP)
-            : base(hP, aP, dP,aPP)
+        public Fighter(int hP, int aP, int dP)
+            : base(hP, aP, dP, 0)
         {
-            aPP = 0;
+            //aPP = 0;
         }
     }
 }
