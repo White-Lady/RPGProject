@@ -20,6 +20,12 @@ namespace DrawEngine
         private const int EnemyNameWindowHeight = EnemyWindowHeight + 17;
         private const int FightMenuWindowWidth = EnemyNameWindowWidth + GapBetweenWindows + 54;
         private const int FightMenuWindowHeight = HeroesWindowHeight + 17;
+        private const int fighterHeight = StartingRow + 2;
+        private const int fighterWidth = 12;
+        private const int blackMageHeight = fighterHeight + 5;
+        private const int blackMageWidth = 23;
+        private const int whiteMageHeight = blackMageHeight + 5;
+        private const int whiteMageWidth = 20;
 
         private static string[,] wolfImage = new string[,] 
         {
@@ -78,6 +84,31 @@ namespace DrawEngine
             {"            >>>>><<<<<   "},
             {"              >>><<<    "},
             {"               >><<   "},
+        };
+
+        private static string[,] whiteMage = 
+        {
+          {"       ,~\"\"\"~.   "},
+          {"    ,-/       \\-.  "},
+          {"  .' '`._____.'` `. "},
+          {"  `-._         _,-' "},
+          {"      `--...--'     "},
+        };
+
+        private static string[,] fighter = 
+        {
+           {"    __O/    "},
+           {"    __/     "},
+           {"  _/  |     "},
+           {"       \\   "}, 
+        };
+
+        private static string[,] blackMage =
+        {
+            {"       O>         _    "},
+            {"      ,/)          )_  "},
+            {"  -----<---<<<   )   ) "},
+            {"       ``      ` _)    "},      
         };
 
         //Displays a single character at the given console coordinates
@@ -140,6 +171,9 @@ namespace DrawEngine
             HeroThreeStatsWindow();
             HeroFourStatsWindow();
             DrawDragon();
+            DrawFighter();
+            DrawBlackMage();
+            DrawWhiteMage();
         }
 
         public static void DrawWolf()
@@ -181,6 +215,48 @@ namespace DrawEngine
                 }
                 Console.WriteLine();
                 Console.SetCursorPosition(StartingColumn + 1, StartingRow + 4 + (row + 1));
+            }
+        }
+
+        public static void DrawFighter()
+        {
+            Console.SetCursorPosition(HeroesWindowWidth - fighterWidth, fighterHeight);
+            for (int row = 0; row < fighter.GetLength(0); row++)
+            {
+                for (int col = 0; col < fighter.GetLength(1); col++)
+                {
+                    Console.Write(fighter[row, col]);
+                }
+                Console.WriteLine();
+                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth, fighterHeight + row + 1);
+            }
+        }
+
+        public static void DrawBlackMage()
+        {
+            Console.SetCursorPosition(HeroesWindowWidth - blackMageWidth, blackMageHeight);
+            for (int row = 0; row < blackMage.GetLength(0); row++)
+            {
+                for (int col = 0; col < blackMage.GetLength(1); col++)
+                {
+                    Console.Write(blackMage[row, col]);
+                }
+                Console.WriteLine();
+                Console.SetCursorPosition(HeroesWindowWidth - blackMageWidth, blackMageHeight + row + 1);
+            }
+        }
+
+        public static void DrawWhiteMage()
+        {
+            Console.SetCursorPosition(HeroesWindowWidth - whiteMageWidth, whiteMageHeight);
+            for (int row = 0; row < whiteMage.GetLength(0); row++)
+            {
+                for (int col = 0; col < whiteMage.GetLength(1); col++)
+                {
+                    Console.Write(whiteMage[row, col]);
+                }
+                Console.WriteLine();
+                Console.SetCursorPosition(HeroesWindowWidth - whiteMageWidth, whiteMageHeight + row + 1);
             }
         }
 
@@ -377,3 +453,4 @@ namespace DrawEngine
         }
     }
 }
+
