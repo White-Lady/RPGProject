@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class WolfArmy : Wolf //TODO Interface (possible IGeneric<T>) for both armies
+    public class WolfArmy : Wolf //TODO abstract class Army inheriting Enemy
     {
         private const int wolfsNumber = 5;
         public bool IsFighting { get; set; }
