@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlackMage.cs" />
+    <Compile Include="Spell.cs" />
     <Compile Include="Fighter.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="Mage.cs" />
