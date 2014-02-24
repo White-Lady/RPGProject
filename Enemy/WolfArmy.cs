@@ -8,6 +8,8 @@
         private const int wolfsNumber = 5;
         public int SingleHitPoints { get; set; }
         public int AmountHitPoints { get; set; }
+        public int SingleAttackPoints { get; set; }
+        public int SingleDefensePoints { get; set; }
 
         List<Wolf> wArmy = new List<Wolf>();
 
@@ -19,13 +21,15 @@
             this.SingleHitPoints = hP;
             this.AttackPoints = aP * wolfsNumber;
             this.DefensePoints = dP * wolfsNumber;
+            this.SingleAttackPoints = aP;
+            this.SingleDefensePoints = dP;
         }
 
         public void FillArmy()
         {
             for (int i = 0; i < wolfsNumber; i++)
             {
-                wArmy.Add(new Wolf(this.SingleHitPoints, this.AttackPoints, this.DefensePoints));
+                wArmy.Add(new Wolf(SingleHitPoints, SingleAttackPoints, SingleDefensePoints));
             }
         }
 
