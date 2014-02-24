@@ -3,42 +3,39 @@
     using System;
     using System.Collections.Generic;
 
-    public class WolfArmy : Wolf //TODO abstract class Army inheriting Enemy
+    public class WolfArmy : Wolf 
     {
         private const int wolfsNumber = 5;
-        public bool IsFighting { get; set; }
+        public int SingleHitPoints { get; set; }
+        public int AmountHitPoints { get; set; }
 
         List<Wolf> wArmy = new List<Wolf>();
 
         public WolfArmy(int hP, int aP, int dP) 
             : base(hP, aP, dP)
         {
-            
+            this.HitPoints = hP * wolfsNumber;
+            this.AmountHitPoints = hP * wolfsNumber;
+            this.SingleHitPoints = hP;
+            this.AttackPoints = aP * wolfsNumber;
+            this.DefensePoints = dP * wolfsNumber;
         }
 
-        private Wolf Wolf(Wolf wolf)
-        {
-            wolf = new Wolf(this.HitPoints, this.AttackPoints, this.DefensePoints);
-            return wolf;
-        }
-
-        public void FillArmy(Wolf wolf)
+        public void FillArmy()
         {
             for (int i = 0; i < wolfsNumber; i++)
             {
-                wArmy.Add(wolf);
+                wArmy.Add(new Wolf(this.SingleHitPoints, this.AttackPoints, this.DefensePoints));
             }
         }
 
-        //TODO CheckIsFigther()
-
-        public void RemoveMember(bool isDead)
+        public void RemoveMember()
         {
-            this.IsDead = isDead;
-            if (IsDead == true)
-            {
-
-            }
+                if (HitPoints <= AmountHitPoints - SingleHitPoints)
+                {
+                    wArmy.RemoveAt(wArmy.Count - 1);
+                    AmountHitPoints = HitPoints;
+                }
         }
     }
 }
