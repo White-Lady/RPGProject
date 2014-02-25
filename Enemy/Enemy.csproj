@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Dragon.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="EnemyArmy.cs" />
     <Compile Include="EnemyMain.cs" />
     <Compile Include="ICountingPoints.cs" />
     <Compile Include="IDead.cs" />
