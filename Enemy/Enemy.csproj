@@ -48,6 +48,7 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="EnemyArmy.cs" />
     <Compile Include="IDead.cs" />
+    <Compile Include="NumberOutOfRangeException.cs" />
     <Compile Include="Pirat.cs" />
     <Compile Include="PiratArmy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
