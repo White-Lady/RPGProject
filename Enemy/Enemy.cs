@@ -1,8 +1,9 @@
 ﻿namespace Enemy
 {
     using System;
+    using Player;
 
-    public abstract class Enemy : ICountingPoints, IDead
+    public abstract class Enemy : ICountingPoints, IDead, IEngage
     {
         private string name;
         public abstract int HitPoints { get; set; }
@@ -32,18 +33,31 @@
             this.IsDead = false;
         }
 
-        //public void DiscountHitPoints(bool isHitted)
-        //{
-        //    if (IsHitted == true)
-        //    {
-        //        this.HitPoints--;
-        //    }
-        //    if (HitPoints == 0)
-        //    {
-        //        this.IsDead = true;
-        //    }
-        //}
+        public virtual string Attack(uint positionToAttack)
+        {
+            string attackDamageAndPosition = this.AttackPoints.ToString() + "-" + positionToAttack.ToString();
+            return attackDamageAndPosition;
+        }
 
+        public void Attacked(int damage)
+        {
+            if (damage < this.DefensePoints)
+            {
+                damage = 0;
+            }
+            else if (damage > this.DefensePoints)
+            {
+                damage -= this.DefensePoints;
+            }
 
+            if (this.HitPoints - damage <= 0)
+            {
+                IsDead = true;
+            }
+            else
+            {
+                this.HitPoints -= damage;
+            }
+        }
     }
 }
