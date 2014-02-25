@@ -10,15 +10,15 @@ namespace DrawEngine
         private const int StartingColumn = 5;
         private const int StartingRow = 1;
         private const int GapBetweenWindows = 2;
-        private const int EnemyWindowWidth = 61 + StartingColumn;
+        private const int EnemyWindowWidth = 56 + StartingColumn;
         private const int EnemyWindowHeight = 27 + StartingRow;
-        private const int HeroesWindowWidth = 30 + +GapBetweenWindows + EnemyWindowWidth;
+        private const int HeroesWindowWidth = 28 + +GapBetweenWindows + EnemyWindowWidth;
         private const int HeroesWindowHeight = 27 + StartingRow;
-        private const int HeroHitPiontsWindowWidth = 25 + GapBetweenWindows + HeroesWindowWidth;
+        private const int HeroHitPiontsWindowWidth = 23 + GapBetweenWindows + HeroesWindowWidth;
         private const int HeroHitPointsWindowHeight = 14 + StartingRow;
-        private const int EnemyNameWindowWidth = 37 + StartingColumn;
+        private const int EnemyNameWindowWidth = 35 + StartingColumn;
         private const int EnemyNameWindowHeight = EnemyWindowHeight + 17;
-        private const int FightMenuWindowWidth = EnemyNameWindowWidth + GapBetweenWindows + 54;
+        private const int FightMenuWindowWidth = EnemyNameWindowWidth + GapBetweenWindows + 49;
         private const int FightMenuWindowHeight = HeroesWindowHeight + 17;
         private const int fighterHeight = StartingRow + 4;
         private const int fighterWidth = 12;
@@ -28,6 +28,8 @@ namespace DrawEngine
         private const int whiteMageWidth = 20;
         private const int arrowLength = 16;
         private static int whosTunrItIs = 0;
+        private const int gapBetweenOptions = 3;
+        private const int gapBetweenTheBorderOfTheFightingOptionMenuAndOptions = 8;
         //private static DisplayChar[,] buffer;
 
         private static string[,] wolfImage = new string[,] 
@@ -221,7 +223,6 @@ namespace DrawEngine
 
         public static void DrawBattleScreen()
         {
-            Console.Clear();
             EnemyWindow();
             HeroesWindow();
             EnemyNameWindow();
@@ -234,6 +235,7 @@ namespace DrawEngine
             DrawBlackMage();
             DrawWhiteMage();
             DrawPlayerTurn();
+            FightingOptionsMenu();
         }
 
         public static void DrawWolf()
@@ -348,47 +350,101 @@ namespace DrawEngine
             }
         }
 
-        public static void PrintEnemyName(string name)
+        public static void PrintNamesAndStatsOfAllParticipantsInTheBattle(string enemyName, string fighterName, int fighterHP, string blackMageName, int blackMageHP, string whiteMageName, int whiteMageHP)
         {
-            int nameLength = name.Length;
+            // Prints the name of the enemy in the right place
+            int nameLength = enemyName.Length;
             int startingPositionOfTheName = (EnemyNameWindowWidth - StartingColumn - nameLength) / 2;
-
             Console.SetCursorPosition(StartingColumn + startingPositionOfTheName, EnemyWindowHeight + 2);
-            Console.WriteLine(name);
-        }
+            Console.WriteLine(enemyName);
 
-        public static void PrintBlackMageStats(string name, int hP)
-        {
-            int nameLength = name.Length;
-            int startingPositionOfTheName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - nameLength) / 2;
-            Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheName, HeroHitPointsWindowHeight + StartingRow + 2);
-            Console.WriteLine(name);
-            int printHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 1);
-            Console.SetCursorPosition(HeroHitPiontsWindowWidth - printHPInTheCenterOfTheWindow, HeroHitPointsWindowHeight + StartingRow + 5);
-            Console.WriteLine(hP);
-        }
-
-        public static void PrintWhiteMageStats(string name, int hP)
-        {
-            int nameLength = name.Length;
-            int startingPositionOfTheName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - nameLength) / 2;
-            Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheName, (HeroHitPointsWindowHeight * 2) + StartingRow + 1);
-            Console.WriteLine(name);
-            int printHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 1);
-            Console.SetCursorPosition(HeroHitPiontsWindowWidth - printHPInTheCenterOfTheWindow, (HeroHitPointsWindowHeight * 2) + StartingRow + 4);
-            Console.WriteLine(hP);
-        }
-
-        public static void PrintFighterStats(string name, int hP)
-        {
-            int nameLength = name.Length;
-            int startingPositionOfTheName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - nameLength) / 2;
+            // Prints the name and HP of the fighter in the right place
+            int fighterNameLength = fighterName.Length;
+            int startingPositionOfTheFighterName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - nameLength) / 2;
             Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheName, StartingRow + 2);
-            Console.WriteLine(name);
-            int printHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 1);
+            Console.WriteLine(fighterName);
+            int printHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 3);
             Console.SetCursorPosition(HeroHitPiontsWindowWidth - printHPInTheCenterOfTheWindow, StartingRow + 5);
-            Console.WriteLine(hP);
+            Console.WriteLine("HP: " + fighterHP);
+
+            // Prints the name and HP of the black mage in the right place
+            int blackMageNameLength = blackMageName.Length;
+            int blackMageStartingPositionOfTheName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - blackMageNameLength) / 2;
+            Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheName, HeroHitPointsWindowHeight + StartingRow + 2);
+            Console.WriteLine(blackMageName);
+            int printBlackMageHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 3);
+            Console.SetCursorPosition(HeroHitPiontsWindowWidth - printBlackMageHPInTheCenterOfTheWindow, HeroHitPointsWindowHeight + StartingRow + 5);
+            Console.WriteLine("HP: " + blackMageHP);
+
+            // Prints the name and HP of the white mage in the right place
+            int whiteMageNameLength = whiteMageName.Length;
+            int startingPositionOfTheWhiteMageName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - whiteMageNameLength) / 2 + 1;
+            Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheWhiteMageName, (HeroHitPointsWindowHeight * 2) + StartingRow + 1);
+            Console.WriteLine(whiteMageName);
+            int prinWhiteMageHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 3);
+            Console.SetCursorPosition(HeroHitPiontsWindowWidth - prinWhiteMageHPInTheCenterOfTheWindow, (HeroHitPointsWindowHeight * 2) + StartingRow + 4);
+            Console.WriteLine("HP: " + whiteMageHP);
         }
+
+        public static void FightingOptionsMenu()
+        {
+            Console.SetCursorPosition(EnemyNameWindowWidth + GapBetweenWindows + gapBetweenTheBorderOfTheFightingOptionMenuAndOptions, EnemyWindowHeight + 3);
+            Console.WriteLine("1) FIGHT");
+
+            Console.SetCursorPosition(EnemyNameWindowWidth + GapBetweenWindows + gapBetweenTheBorderOfTheFightingOptionMenuAndOptions, EnemyWindowHeight + gapBetweenOptions + 3);
+            Console.WriteLine("2) MAGIC");
+
+            Console.SetCursorPosition(EnemyNameWindowWidth + GapBetweenWindows + gapBetweenTheBorderOfTheFightingOptionMenuAndOptions, EnemyWindowHeight + (gapBetweenOptions * 2) + 3);
+            Console.WriteLine("3) DRINK");
+
+            Console.SetCursorPosition(EnemyNameWindowWidth + GapBetweenWindows + gapBetweenTheBorderOfTheFightingOptionMenuAndOptions, EnemyWindowHeight + (gapBetweenOptions * 3) + 3);
+            Console.WriteLine("4) ITEM");
+
+            Console.SetCursorPosition(EnemyNameWindowWidth + GapBetweenWindows + (gapBetweenTheBorderOfTheFightingOptionMenuAndOptions * 4), EnemyWindowHeight + 3);
+            Console.WriteLine("5) RUN");
+        }
+
+        //public static void PrintEnemyName(string name)
+        //{
+        //    int nameLength = name.Length;
+        //    int startingPositionOfTheName = (EnemyNameWindowWidth - StartingColumn - nameLength) / 2;
+
+        //    Console.SetCursorPosition(StartingColumn + startingPositionOfTheName, EnemyWindowHeight + 2);
+        //    Console.WriteLine(name);
+        //}
+
+        //public static void PrintBlackMageStats(string name, int hP)
+        //{
+        //    int nameLength = name.Length;
+        //    int startingPositionOfTheName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - nameLength) / 2;
+        //    Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheName, HeroHitPointsWindowHeight + StartingRow + 2);
+        //    Console.WriteLine(name);
+        //    int printHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 3);
+        //    Console.SetCursorPosition(HeroHitPiontsWindowWidth - printHPInTheCenterOfTheWindow, HeroHitPointsWindowHeight + StartingRow + 5);
+        //    Console.WriteLine("HP: " + hP);
+        //}
+
+        //public static void PrintWhiteMageStats(string name, int hP)
+        //{
+        //    int nameLength = name.Length;
+        //    int startingPositionOfTheName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - nameLength) / 2;
+        //    Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheName, (HeroHitPointsWindowHeight * 2) + StartingRow + 1);
+        //    Console.WriteLine(name);
+        //    int printHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 3);
+        //    Console.SetCursorPosition(HeroHitPiontsWindowWidth - printHPInTheCenterOfTheWindow, (HeroHitPointsWindowHeight * 2) + StartingRow + 4);
+        //    Console.WriteLine("HP: " + hP);
+        //}
+
+        //public static void PrintFighterStats(string name, int hP)
+        //{
+        //    int nameLength = name.Length;
+        //    int startingPositionOfTheName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - nameLength) / 2;
+        //    Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheName, StartingRow + 2);
+        //    Console.WriteLine(name);
+        //    int printHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 3);
+        //    Console.SetCursorPosition(HeroHitPiontsWindowWidth - printHPInTheCenterOfTheWindow, StartingRow + 5);
+        //    Console.WriteLine("HP: " + hP);
+        //}
 
         public static void EnemyWindow()
         {
@@ -552,9 +608,9 @@ namespace DrawEngine
                 PrintStringAtPosition(HeroHitPiontsWindowWidth, row, "█", ConsoleColor.Gray);
             }
 
-            for (int row = HeroHitPointsWindowHeight * 3; row < (HeroHitPointsWindowHeight * 3) + 1; row++)
+            for (int row = (HeroHitPointsWindowHeight * 3) - 1; row < (HeroHitPointsWindowHeight * 3); row++)
             {
-                for (int col = HeroesWindowWidth + GapBetweenWindows; col < HeroHitPiontsWindowWidth; col++)
+                for (int col = HeroesWindowWidth + GapBetweenWindows; col < HeroHitPiontsWindowWidth + 1; col++)
                 {
                     PrintStringAtPosition(col, row, "█", ConsoleColor.Gray);
                 }

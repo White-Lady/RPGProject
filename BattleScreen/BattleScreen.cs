@@ -10,13 +10,14 @@
         
         public static void StartBattle()
         {
-            bool battleEnded = false;
-            while (battleEnded == false)
-            {
-                // check if battle is ended and set bool to true.
-                DrawEngine.DrawBattleScreen();
+            //bool battleEnded = false;
+            Console.Clear();
+            DrawEngine.DrawBattleScreen();
+            //while (battleEnded == false)
+            //{
+            //    // check if battle is ended and set bool to true.
 
-            }
+            //}
         }
     }
 }
