@@ -45,6 +45,7 @@
             {
                 if (YPosition > 0)
                 {
+                    positionToBeChecked.X = this.XPosition;
                     positionToBeChecked.Y = this.YPosition - 1;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
@@ -60,6 +61,7 @@
             {
                 if (YPosition < Console.WindowHeight - 1)
                 {
+                    positionToBeChecked.X = this.XPosition;
                     positionToBeChecked.Y = this.YPosition + 1;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
@@ -76,6 +78,7 @@
                 if (XPosition > 0)
                 {
                     positionToBeChecked.X = this.XPosition - 1;
+                    positionToBeChecked.Y = this.YPosition;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
                     if (isValidPosition)
@@ -91,6 +94,7 @@
                 if (XPosition < Console.WindowWidth - 1)
                 {
                     positionToBeChecked.X = this.XPosition + 1;
+                    positionToBeChecked.Y = this.YPosition;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
                     if (isValidPosition)
