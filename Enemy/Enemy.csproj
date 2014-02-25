@@ -50,7 +50,6 @@
     <Compile Include="EnemyMain.cs" />
     <Compile Include="ICountingPoints.cs" />
     <Compile Include="IDead.cs" />
-    <Compile Include="IEngage.cs" />
     <Compile Include="Pirat.cs" />
     <Compile Include="PiratArmy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
