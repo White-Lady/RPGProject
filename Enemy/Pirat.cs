@@ -17,8 +17,8 @@
             }
         }
 
-        public Pirat(int hP, int aP, int dP) 
-            : base(hP, aP, dP)
+        public Pirat(string name, int hP, int aP, int dP) 
+            : base(name, hP, aP, dP)
         {
         }
     }

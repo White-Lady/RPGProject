@@ -4,7 +4,7 @@
     using Item;
     using Shop;
     public abstract class Hero
-    {        
+    {
         private int hitPoints;
         private int attackPoints;
         private int defensePoints;
@@ -35,7 +35,7 @@
 
         public bool IsDead { get; set; }
         public int Experience { get; set; }
-        private int Level { get; set;  }
+        private int Level { get; set; }
 
         public int DefensePoints
         {
@@ -65,6 +65,23 @@
                 this.level++;
             }
         }
-
+        public virtual string Attack(uint positionToAttack)
+        {
+            string attackDamageAndPosition = this.AttackPoints.ToString() + "-" + positionToAttack.ToString();
+            return attackDamageAndPosition;
+        }
+        // This method is called in BattleScreen, if the damage takes more than the target's hp, sets isDead to true.
+        public void Attacked(int damage)
+        {
+            damage -= this.defensePoints;
+            if (this.hitPoints - damage <= 0)
+            {
+                IsDead = true;
+            }
+            else
+            {
+                this.hitPoints -= damage;
+            }
+        }
     }
 }

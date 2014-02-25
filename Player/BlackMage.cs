@@ -3,8 +3,7 @@
     using System;
     public class BlackMage : Mage
     {
-        private Spell[] arrSpells = new Spell[3]; 
-
+        private Spell[] arrSpells = new Spell[3];
         public BlackMage(int hP, int aP, int dP, int mana, int abilityPower)
             : base(20, 1, 3, 15, 8)
         {

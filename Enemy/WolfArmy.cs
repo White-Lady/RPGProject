@@ -13,8 +13,8 @@
 
         List<Wolf> wArmy = new List<Wolf>();
 
-        public WolfArmy(int hP, int aP, int dP) 
-            : base(hP, aP, dP)
+        public WolfArmy(string name, int hP, int aP, int dP) 
+            : base(name, hP, aP, dP)
         {
             this.HitPoints = hP * wolfsNumber;
             this.AmountHitPoints = hP * wolfsNumber;
@@ -29,7 +29,7 @@
         {
             for (int i = 0; i < wolfsNumber; i++)
             {
-                wArmy.Add(new Wolf(SingleHitPoints, SingleAttackPoints, SingleDefensePoints));
+                wArmy.Add(new Wolf("WhiteSkinBlueEyesWolf", SingleHitPoints, SingleAttackPoints, SingleDefensePoints));
             }
         }
 

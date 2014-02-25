@@ -1,7 +1,6 @@
 ﻿namespace Player
 {
     using System;
-    using BattleScreen;
     using Shop;
     using GameWorld;
 

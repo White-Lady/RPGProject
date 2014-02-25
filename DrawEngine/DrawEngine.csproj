@@ -43,9 +43,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Enemy\Enemy.csproj">
+      <Project>{b27af5fb-4e95-445a-b38a-ef1365aa22d0}</Project>
+      <Name>Enemy</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GameWorld\GameWorld.csproj">
       <Project>{ab7a0d36-aebd-4005-a9a2-5f32964a9042}</Project>
       <Name>GameWorld</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Player\Player.csproj">
+      <Project>{9abdb40e-5069-4541-86c2-031ee2e3c64d}</Project>
+      <Name>Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
