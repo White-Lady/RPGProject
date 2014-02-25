@@ -11,7 +11,7 @@
         public const ConsoleColor CharColor = ConsoleColor.Green;
         private Position positionToBeChecked;
         private Position oldPosition;
-        public event EventHandler StartBattle;
+        public event EventHandler EnemyEncountered;
 
         public Player(int x, int y)
         {
@@ -105,11 +105,11 @@
         }
 
 
-        private void OnStartBattle()
+        private void OnEnemyEncountered()
         {
-            if (StartBattle != null)
+            if (EnemyEncountered != null)
             {
-                StartBattle(this, new EventArgs());
+                EnemyEncountered(this, new EventArgs());
             }
         }
 
@@ -121,7 +121,7 @@
                 case CellState.EmptySpace:
                     return true;
                 case CellState.Enemy:
-                    OnStartBattle();
+                    OnEnemyEncountered();
                     return true;
                 case CellState.Shop:
                     //OnStartShop();

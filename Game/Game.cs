@@ -10,7 +10,7 @@
 
     class Game
     {
-        public static void Test(object obj, EventArgs arg)
+        public static void Battle(object obj, EventArgs arg)
         {
             BattleScreen.StartBattle();
         }
@@ -57,7 +57,7 @@
                 //DrawEngine.PrintCharAtPosition(119, 49, 'H', ConsoleColor.Green);
                 DrawEngine.PrintCharAtPosition(player.XPosition, player.YPosition, Player.PlayerChar, Player.CharColor);
                 //DrawEngine.PrintCharAtPosition(10, 30, 'B', ConsoleColor.Red);
-                player.StartBattle += new EventHandler(Test);
+                player.EnemyEncountered += new EventHandler(Battle);
                 
                 Thread.Sleep(50);
             }
