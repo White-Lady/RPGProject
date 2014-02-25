@@ -50,6 +50,7 @@
     <Compile Include="EnemyMain.cs" />
     <Compile Include="ICountingPoints.cs" />
     <Compile Include="IDead.cs" />
+    <Compile Include="IEngage.cs" />
     <Compile Include="Pirat.cs" />
     <Compile Include="PiratArmy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,12 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DrawEngine\DrawEngine.csproj">
-      <Project>{fe258cc8-9fe2-4bcc-98b3-14ecf491ab5c}</Project>
-      <Name>DrawEngine</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,7 +3,7 @@
     using System;
     using Item;
     using Shop;
-    public abstract class Hero
+    public abstract class Hero : IEngage
     {
         private int hitPoints;
         private int attackPoints;
@@ -73,7 +73,15 @@
         // This method is called in BattleScreen, if the damage takes more than the target's hp, sets isDead to true.
         public void Attacked(int damage)
         {
-            damage -= this.defensePoints;
+            if (damage < this.defensePoints)
+            {
+                damage = 0;
+            }
+            else if (damage > this.defensePoints)
+            {
+                damage -= this.defensePoints;
+            }
+
             if (this.hitPoints - damage <= 0)
             {
                 IsDead = true;

@@ -12,7 +12,7 @@
     {
         public static void Battle(object obj, EventArgs arg)
         {
-            BattleScreen.StartBattle();
+            //BattleScreen.StartBattle();
         }
 
         static void Main()

@@ -5,7 +5,6 @@
     public abstract class Enemy : ICountingPoints, IDead
     {
         private string name;
-
         public abstract int HitPoints { get; set; }
         public int AttackPoints { get; set; }
         public int DefensePoints { get; set; }
@@ -26,7 +25,7 @@
 
         protected Enemy(string name, int hP, int aP, int dP)
         {
-            this.Name = name;
+            this.name = name;
             this.HitPoints = hP;
             this.AttackPoints = aP;
             this.DefensePoints = dP;

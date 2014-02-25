@@ -1,5 +1,4 @@
-﻿
-namespace GameWorld
+﻿namespace GameWorld
 {
     using System;
     using System.Collections.Generic;
