@@ -11,6 +11,7 @@
         private uint experience;
         private uint exp_to_level;
         private int level;
+        private int maxHitPoints;
         private Item[] inventory = new Item[6];
 
         protected Hero(int hP, int aP, int dP, int abilityPower)
@@ -23,10 +24,12 @@
             this.level = 1;
             this.IsDead = false;
             this.AbilityPowerPoints = abilityPower;
+            this.maxHitPoints = hP;
         }
 
         public int AbilityPowerPoints { get; set; }
 
+     
         public Item[] Inventory
         {
             get { return this.inventory; }
@@ -62,9 +65,12 @@
             {
                 this.experience -= this.exp_to_level;
                 this.exp_to_level = (uint)(this.exp_to_level * 1.5);
-                this.level++;
+                //levelup function
             }
         }
+
+        public abstract void levelUp();
+   
         public virtual string Attack(uint positionToAttack)
         {
             string attackDamageAndPosition = this.AttackPoints.ToString() + "-" + positionToAttack.ToString();

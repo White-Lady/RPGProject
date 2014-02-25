@@ -13,5 +13,9 @@
             return base.Attack(positionToAttack);
         }
 
+        public override void levelUp()
+        {
+
+        }
     }
 }
