@@ -116,7 +116,7 @@ namespace DrawEngine
             {"       ``      ` _)    "},      
         };
 
-        private static string playerTurn = "--->";
+        private static string playerTurn = "-->";
 
         //Displays a single character at the given console coordinates
         public static void PrintCharAtPosition(int posX, int posY, char c, ConsoleColor color = ConsoleColor.White)
@@ -326,19 +326,19 @@ namespace DrawEngine
         {
             if (whosTunrItIs == 0)
             {
-                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength, fighterHeight + (fighterHeight / 2) - 1);
+                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength  +2, fighterHeight + (fighterHeight / 2) - 1);
                 Console.Write(playerTurn);
             }
 
             if (whosTunrItIs == 1)
             {
-                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength, blackMageHeight + 2);
+                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength + 2, blackMageHeight + 2);
                 Console.Write(playerTurn);
             }
 
             if (whosTunrItIs == 2)
             {
-                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength, whiteMageHeight + 2);
+                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength + 2, whiteMageHeight + 2);
                 Console.Write(playerTurn);
             }
 

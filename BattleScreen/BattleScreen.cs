@@ -13,6 +13,7 @@
             //bool battleEnded = false;
             Console.Clear();
             DrawEngine.DrawBattleScreen();
+            //DrawEngine.PrintNamesAndStatsOfAllParticipantsInTheBattle(
             //while (battleEnded == false)
             //{
             //    // check if battle is ended and set bool to true.
