@@ -8,5 +8,9 @@
         {
 
         }
+        public override string Attack(uint positionToAttack)
+        {
+            return base.Attack(positionToAttack);
+        }
     }
 }

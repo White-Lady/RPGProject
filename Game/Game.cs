@@ -21,8 +21,8 @@
             Console.CursorVisible = false;
 
             // Set console dimensions
-            //Console.BufferHeight = Console.WindowHeight = 50;
-            //Console.BufferWidth = Console.WindowWidth = 120;
+            Console.BufferHeight = Console.WindowHeight = 50;
+            Console.BufferWidth = Console.WindowWidth = 120;
             Console.SetWindowSize(120, 50);
             Console.SetBufferSize(120, 50);
 
