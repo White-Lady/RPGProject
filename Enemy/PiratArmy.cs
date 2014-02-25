@@ -3,37 +3,39 @@
     using System;
     using System.Collections.Generic;
 
-    public class PiratArmy : Pirat
+    public class PiratArmy : EnemyArmy
     {
-        private const int piratsNumber = 5;
-        public int SingleHitPoints { get; set; }
-        public int AmountHitPoints { get; set; }
-        public int SingleAttackPoints { get; set; }
-        public int SingleDefensePoints { get; set; }
+        public override int HitPoints { get; set; }
+
+        public override int EnemiesNumber
+        {
+            get
+            {
+                return EnemiesNumber;
+            }
+            set
+            {
+                EnemiesNumber = 5;
+            }
+        }
 
         List<Pirat> pArmy = new List<Pirat>();
 
-        public PiratArmy(string name, int hP, int aP, int dP) 
+        public PiratArmy(string name, int hP, int aP, int dP)
             : base(name, hP, aP, dP)
         {
-            this.HitPoints = hP * piratsNumber;
-            this.SingleHitPoints = hP;
-            this.AmountHitPoints = hP * piratsNumber;
-            this.AttackPoints = aP * piratsNumber;
-            this.DefensePoints = dP * piratsNumber;
-            this.SingleAttackPoints = aP;
-            this.SingleDefensePoints = dP;
+            
         }
 
-        public void FillArmy()
+        public override void FillArmy()
         {
-            for (int i = 0; i < piratsNumber; i++)
+            for (int i = 0; i < EnemiesNumber; i++)
             {
                 pArmy.Add(new Pirat("OneEyePirate", SingleHitPoints, SingleAttackPoints, SingleDefensePoints));
             }
         }
 
-        public void RemoveMember()
+        public override void RemoveMember()
         {
             if (HitPoints <= AmountHitPoints - SingleHitPoints)
             {
