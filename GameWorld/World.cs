@@ -11,13 +11,13 @@ namespace GameWorld
     {
         private const int distance = 10; //the distance between objects
         private int xLen;
-        private int yLen;//Dimension of the world   
+        private int yLen;//Dimension of the world
         private List<Place> places;
-        private CellState[,] worldMatrix;
+        private static CellState[,] worldMatrix;
 
         public World(int xLen, int yLen /*, List<Place> places*/)
         {
-            this.WorldMatrix = new CellState[xLen, yLen];
+            WorldMatrix = new CellState[xLen, yLen];
 
             //if ((this.xLen > 40) || (this.xLen < 0))
             //{
@@ -55,15 +55,15 @@ namespace GameWorld
 
         }
 
-        public CellState[,] WorldMatrix
+        public static CellState[,] WorldMatrix
         { 
             get
             {
-                return this.worldMatrix;
+                return worldMatrix;
             }
             set
             {
-                this.worldMatrix = value;
+                worldMatrix = value;
             }
         }
 
@@ -87,7 +87,7 @@ namespace GameWorld
         {
             get 
             {
-                return this.worldMatrix[row, col];
+                return worldMatrix[row, col];
             }
         }
 
@@ -100,11 +100,11 @@ namespace GameWorld
             {
                 string readedLine = string.Empty;
 
-                for (int rows = 0; rows < this.WorldMatrix.GetLength(0); rows++)
+                for (int rows = 0; rows < WorldMatrix.GetLength(0); rows++)
                 {
                     readedLine = reader.ReadLine();
 
-                    for (int cols = 0; cols < this.WorldMatrix.GetLength(1); cols++)
+                    for (int cols = 0; cols < WorldMatrix.GetLength(1); cols++)
                     {
                         if (readedLine != null)
                         {
@@ -126,13 +126,13 @@ namespace GameWorld
                                         break;
                                 }
 
-                                this.worldMatrix[rows, cols] = cellValue;
+                                worldMatrix[rows, cols] = cellValue;
                         }
                     }
                 }
             }
         }
-        
+
         public void DrawPlaces()
         {
             foreach (var item in places)
@@ -146,13 +146,13 @@ namespace GameWorld
         {
             StringBuilder result = new StringBuilder();
 
-            for (int rows = 0; rows < this.WorldMatrix.GetLength(0); rows++)
+            for (int rows = 0; rows < WorldMatrix.GetLength(0); rows++)
             {
-                for (int cols = 0; cols < this.WorldMatrix.GetLength(1); cols++)
+                for (int cols = 0; cols < WorldMatrix.GetLength(1); cols++)
                 {
                     char charToBeDrawn = ' ';
 
-                    switch (this.WorldMatrix[rows, cols])
+                    switch (WorldMatrix[rows, cols])
                     {
                         case CellState.EmptySpace:
                             break;
@@ -172,7 +172,7 @@ namespace GameWorld
                     result.Append(charToBeDrawn);
                 }
 
-                if (rows != this.WorldMatrix.GetLength(0) - 1)
+                if (rows != WorldMatrix.GetLength(0) - 1)
                 {
                     result.Append('\n');
                 }

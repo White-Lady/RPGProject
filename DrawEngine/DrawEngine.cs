@@ -174,7 +174,7 @@ namespace DrawEngine
 
         public static void DrawWorld(CellState[,] world)
         {
-            Console.SetCursorPosition(0, 0);
+            //Console.SetCursorPosition(0, 0);
             //FillBuffer(world);
 
             for (int i = 0; i < world.GetLength(0); i++)
@@ -208,15 +208,16 @@ namespace DrawEngine
                             break;
                     }
 
-                    Console.ForegroundColor = elementColor;
-                    Console.Write(charToBeDrawn);
-                    //PrintCharAtPosition(j, i, charToBeDrawn, elementColor);
+                    //Console.ForegroundColor = elementColor;
+                    //Console.Write(charToBeDrawn);
+                    PrintCharAtPosition(j, i, charToBeDrawn, elementColor);
                 }
             }
         }
 
         public static void DrawBattleScreen()
         {
+            Console.Clear();
             EnemyWindow();
             HeroesWindow();
             EnemyNameWindow();

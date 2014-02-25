@@ -55,6 +55,10 @@
       <Project>{473d5ace-94c2-4b1f-b72d-481b057b8d72}</Project>
       <Name>BattleScreen</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GameWorld\GameWorld.csproj">
+      <Project>{ab7a0d36-aebd-4005-a9a2-5f32964a9042}</Project>
+      <Name>GameWorld</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Item\Item.csproj">
       <Project>{5ed0410c-08d2-4c4f-a55e-43c980fb5e8d}</Project>
       <Name>Item</Name>
