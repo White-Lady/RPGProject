@@ -13,8 +13,8 @@
 
         List<Pirat> pArmy = new List<Pirat>();
 
-        public PiratArmy(int hP, int aP, int dP) 
-            : base(hP, aP, dP)
+        public PiratArmy(string name, int hP, int aP, int dP) 
+            : base(name, hP, aP, dP)
         {
             this.HitPoints = hP * piratsNumber;
             this.SingleHitPoints = hP;
@@ -29,7 +29,7 @@
         {
             for (int i = 0; i < piratsNumber; i++)
             {
-                pArmy.Add(new Pirat(SingleHitPoints, SingleAttackPoints, SingleDefensePoints));
+                pArmy.Add(new Pirat("OneEyePirate", SingleHitPoints, SingleAttackPoints, SingleDefensePoints));
             }
         }
 

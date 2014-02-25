@@ -16,8 +16,8 @@
             }
         }
 
-        public Wolf(int hP, int aP, int dP) 
-            : base(hP, aP, dP)
+        public Wolf( string name, int hP, int aP, int dP) 
+            : base(name, hP, aP, dP)
         {
         }
     }

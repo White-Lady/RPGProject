@@ -58,16 +58,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BattleScreen\BattleScreen.csproj">
-      <Project>{473d5ace-94c2-4b1f-b72d-481b057b8d72}</Project>
-      <Name>BattleScreen</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DrawEngine\DrawEngine.csproj">
-      <Project>{fe258cc8-9fe2-4bcc-98b3-14ecf491ab5c}</Project>
-      <Name>DrawEngine</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

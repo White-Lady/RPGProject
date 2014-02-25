@@ -4,14 +4,29 @@
 
     public abstract class Enemy : ICountingPoints, IDead
     {
+        private string name;
+
         public abstract int HitPoints { get; set; }
         public int AttackPoints { get; set; }
         public int DefensePoints { get; set; }
         //public bool IsHitted { get; set; }
         public bool IsDead { get; set; }
 
-        protected Enemy(int hP, int aP, int dP)
+        public string Name
         {
+            get { return this.name; }
+            private set
+            {
+                if (name.Length > 35)
+                {
+                    throw new IndexOutOfRangeException("The name is too long. The name must be not longer than 35 characters!");
+                }
+            }
+        }
+
+        protected Enemy(string name, int hP, int aP, int dP)
+        {
+            this.Name = name;
             this.HitPoints = hP;
             this.AttackPoints = aP;
             this.DefensePoints = dP;
