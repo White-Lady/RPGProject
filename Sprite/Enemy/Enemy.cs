@@ -32,10 +32,10 @@
             this.IsDead = false;
         }
 
-        public virtual string Attack(uint positionToAttack)
+        public virtual int Attack()
         {
-            string attackDamageAndPosition = this.AttackPoints.ToString() + "-" + positionToAttack.ToString();
-            return attackDamageAndPosition;
+            int attackDamage = this.AttackPoints;
+            return attackDamage;
         }
 
         public void Attacked(int damage)

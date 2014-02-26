@@ -3,7 +3,7 @@
     using System;
     public interface IEngage
     {
-        string Attack(uint positionToAttack);
+        int Attack();
         void Attacked(int damage);
     }
 }

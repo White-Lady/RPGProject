@@ -72,10 +72,10 @@
 
         public abstract void levelUp();
    
-        public virtual string Attack(uint positionToAttack)
+        public virtual int Attack()
         {
-            string attackDamageAndPosition = this.AttackPoints.ToString() + "-" + positionToAttack.ToString();
-            return attackDamageAndPosition;
+            int attackDamage = this.AttackPoints;
+            return attackDamage;
         }
         // This method is called in BattleScreen, if the damage takes more than the target's hp, sets isDead to true.
         public void Attacked(int damage)

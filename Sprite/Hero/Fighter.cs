@@ -8,9 +8,9 @@
         {
 
         }
-        public override string Attack(uint positionToAttack)
+        public override int Attack()
         {
-            return base.Attack(positionToAttack);
+            return base.Attack();
         }
 
         public override void levelUp()
