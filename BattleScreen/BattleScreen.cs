@@ -47,7 +47,7 @@
                 //Player's turn
                 if (playersTurn)
                 {
-                    if (ivanOkoto.HitPoints <= 0)
+                    if (ivanOkoto.IsDead == true)
                     {
                         battleEnded = true;
                         World.WorldMatrix[Player.YPosition, Player.XPosition] = CellState.EmptySpace;
@@ -67,7 +67,7 @@
                         ivanOkoto.Attacked(damage);
 
                         Console.SetCursorPosition(6, 31);
-                        Console.WriteLine("Enemy HP: {0}", ivanOkoto.HitPoints);
+                        Console.WriteLine("Enemy HP: {0}, STATE: {1}", ivanOkoto.HitPoints, ivanOkoto.IsDead);
                         heroOnTurn++;
                         playersTurn = false; 
                         DrawEngine.DrawPlayerTurn();
@@ -86,6 +86,7 @@
                     //DrawEngine.EraseStringOnPosition(95, 2, Player.HeroesOfPlayer[0].HitPoints.ToString().Length + 4);
 
                     int damage = ivanOkoto.Attack();
+
                     if (enemyAttackCounter < Player.HeroesOfPlayer.Length - 1)
                     {
                         enemyAttackCounter++;
