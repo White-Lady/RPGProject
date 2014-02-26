@@ -238,7 +238,7 @@ namespace DrawEngine
             HeroOneStatsWindow();
             HeroTwoStatsWindow();
             HeroThreeStatsWindow();
-            DrawDragon();
+            DrawPirat();
             DrawFighter();
             DrawBlackMage();
             DrawWhiteMage();
