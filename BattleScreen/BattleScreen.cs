@@ -9,6 +9,20 @@
     using System.Threading;
     public class BattleScreen
     {
+        private static void DrawAllPlayerHPs()
+        {
+            DrawEngine.PrintStringAtPosition(95, 2, "HP: " + Player.HeroesOfPlayer[0].HitPoints.ToString(), ConsoleColor.Red);
+            DrawEngine.PrintStringAtPosition(95, 17, "HP: " + Player.HeroesOfPlayer[1].HitPoints.ToString(), ConsoleColor.Red);
+            DrawEngine.PrintStringAtPosition(95, 31, "HP: " + Player.HeroesOfPlayer[2].HitPoints.ToString(), ConsoleColor.Red);
+        }
+
+        private static void EraseAllPlayerHPs()
+        {
+            DrawEngine.EraseStringOnPosition(95, 2, Player.HeroesOfPlayer[0].HitPoints.ToString().Length + 4);
+            DrawEngine.EraseStringOnPosition(95, 17, Player.HeroesOfPlayer[1].HitPoints.ToString().Length + 4);
+            DrawEngine.EraseStringOnPosition(95, 31, Player.HeroesOfPlayer[2].HitPoints.ToString().Length + 4);
+        }
+
         public static void StartBattle()
         {
             //TODO: Get the instances of the player and the engaged enemy
@@ -16,31 +30,38 @@
             bool battleEnded = false;
             bool playersTurn = true;
             int enemyAttackCounter = 0;
+            int heroOnTurn = 0;
             Console.Clear();
             DrawEngine.DrawBattleScreen();
 
             //Console.SetCursorPosition(95, 2);
             //Console.Write("HP: ");
-            DrawEngine.PrintStringAtPosition(95, 2, "HP: ", ConsoleColor.Red);
-            DrawEngine.PrintStringAtPosition(99, 2, Player.HeroesOfPlayer[0].HitPoints.ToString(), ConsoleColor.Red);
+            //DrawEngine.PrintStringAtPosition(95, 2, "HP: ", ConsoleColor.Red);
 
             while (battleEnded == false)
             {
-                Console.SetCursorPosition(95, 2);
-                Console.WriteLine("HP: {0}", Player.HeroesOfPlayer[0].HitPoints);
+                //DrawEngine.PrintStringAtPosition(95, 2, "HP: " + Player.HeroesOfPlayer[0].HitPoints.ToString(), ConsoleColor.Red);
+                DrawAllPlayerHPs();
+
                 //Player's turn
                 if (playersTurn)
                 {
                     ConsoleKeyInfo pressedKey = Console.ReadKey(true);
                     if (pressedKey.Key == ConsoleKey.D1)
                     {
+                        if (heroOnTurn == Player.HeroesOfPlayer.Length)
+                        {
+                            heroOnTurn = 0;
+                        }
+
                         Console.SetCursorPosition(6, 30);
                         Console.Write("Attacking...");
-                        int damage = Player.HeroesOfPlayer[0].Attack();
+                        int damage = Player.HeroesOfPlayer[heroOnTurn].Attack();
                         ivanOkoto.Attacked(damage);
+
                         Console.SetCursorPosition(6, 31);
                         Console.WriteLine("Enemy HP: {0}", ivanOkoto.HitPoints);
-                        //Player.HeroesOfPlayer[0].HitPoints--;
+                        heroOnTurn++;
                         playersTurn = false;
 
                     }
@@ -53,7 +74,8 @@
                 //Enemy's turn
                 else
                 {
-                    DrawEngine.EraseStringOnPosition(99, 2, Player.HeroesOfPlayer[0].HitPoints.ToString().Length);
+                    EraseAllPlayerHPs();
+                    //DrawEngine.EraseStringOnPosition(95, 2, Player.HeroesOfPlayer[0].HitPoints.ToString().Length + 4);
 
                     int damage = ivanOkoto.Attack();
                     if (enemyAttackCounter < Player.HeroesOfPlayer.Length -1)
