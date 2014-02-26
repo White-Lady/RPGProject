@@ -12,7 +12,7 @@
         private uint exp_to_level;
         private int level;
         private int maxHitPoints;
-        private IItem[] inventory = new IItem[6];
+        private Item[] inventory = new Item[6];
 
         protected Hero(int hP, int aP, int dP, int abilityPower)
         {
@@ -30,7 +30,7 @@
         public int AbilityPowerPoints { get; set; }
 
      
-        public IItem[] Inventory
+        public Item[] Inventory
         {
             get { return this.inventory; }
             set { this.inventory = value; }

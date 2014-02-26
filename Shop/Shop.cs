@@ -8,7 +8,7 @@
     using GameWorld;
     public static class Shop
     {
-        public static List<IItem> ShopItems = new List<IItem>();
+        public static List<Item> ShopItems = new List<Item>();
         private static LongSword LongSwordItem = new LongSword();
         private static MagicWand MagicWandItem = new MagicWand();
         private static Vest VestItem = new Vest();

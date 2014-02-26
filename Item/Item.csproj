@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GiantsTonic.cs" />
-    <Compile Include="IItem.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="LongSword.cs" />
     <Compile Include="MagicWand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
