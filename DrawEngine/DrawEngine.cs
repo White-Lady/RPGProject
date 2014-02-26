@@ -134,18 +134,52 @@ namespace DrawEngine
             Console.Write(str);
         }
 
+        //Erases a.k.a. "draws empty space at the given position
         public static void EraseCharOnPosition(int posX, int posY)
         {
             Console.SetCursorPosition(posX, posY);
             Console.Write(' ');
         }
 
+        //Erases string starting at the given position and with a given length
         public static void EraseStringOnPosition(int startX, int posY, int length)
         {
             for (int i = 0; i < length; i++)
             {
                 EraseCharOnPosition(startX + i, posY);
             }
+        }
+
+        //Redraws the current cell
+        public static void RedrawCell(int posX, int posY)
+        {
+            char charToBeDrawn = ' ';
+            ConsoleColor color = ConsoleColor.White;
+
+            switch (World.WorldMatrix[posY,posX])
+            {
+                case CellState.EmptySpace:
+                    break;
+                case CellState.Enemy:
+                    charToBeDrawn = '*';
+                    color = ConsoleColor.Red;
+                    break;
+                case CellState.Shop:
+                    charToBeDrawn = '$';
+                    color = ConsoleColor.Yellow;
+                    break;
+                case CellState.Wall:
+                    charToBeDrawn = '#';
+                    color = ConsoleColor.White;
+                    break;
+                case CellState.DeadEnemy:
+                    charToBeDrawn = 'X';
+                    color = ConsoleColor.Blue;
+                    break;
+                default:
+                    break;
+            }
+            PrintCharAtPosition(posX, posY, charToBeDrawn, color);
         }
 
         //private static void FillBuffer(CellState[,] world)

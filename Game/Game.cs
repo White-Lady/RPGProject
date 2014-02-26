@@ -57,7 +57,8 @@
                     }
                     Player.Move(pressedKey);
 
-                    DrawEngine.EraseCharOnPosition(Player.OldPosition.X, Player.OldPosition.Y);
+                    DrawEngine.RedrawCell(Player.OldPosition.X, Player.OldPosition.Y);
+                    //DrawEngine.EraseCharOnPosition(Player.OldPosition.X, Player.OldPosition.Y);
                 }
 
                 //DrawEngine.PrintCharAtPosition(119, 49, 'H', ConsoleColor.Green);
