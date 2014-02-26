@@ -107,7 +107,6 @@
             }
         }
 
-
         private void OnEnemyEncountered()
         {
             if (EnemyEncountered != null)
@@ -119,6 +118,7 @@
         public bool CheckForCollision(Position pos)
         {
             //return true;
+            
             switch (World.WorldMatrix[pos.Y, pos.X])
             {
                 case CellState.EmptySpace:

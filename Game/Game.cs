@@ -4,7 +4,7 @@
     using DrawEngine;
     using BattleScreen;
     using System.Threading;
-    using Player;
+    using Sprite;
     using GameWorld;
     using System.Linq;
 
@@ -12,7 +12,7 @@
     {
         public static void Battle(object obj, EventArgs arg)
         {
-            //BattleScreen.StartBattle();
+            BattleScreen.StartBattle();
         }
 
         static void Main()

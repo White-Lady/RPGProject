@@ -49,13 +49,9 @@
       <Project>{fe258cc8-9fe2-4bcc-98b3-14ecf491ab5c}</Project>
       <Name>DrawEngine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Enemy\Enemy.csproj">
-      <Project>{b27af5fb-4e95-445a-b38a-ef1365aa22d0}</Project>
-      <Name>Enemy</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Player\Player.csproj">
-      <Project>{9abdb40e-5069-4541-86c2-031ee2e3c64d}</Project>
-      <Name>Player</Name>
+    <ProjectReference Include="..\Sprite\Sprite.csproj">
+      <Project>{06ac061a-0a41-4f2a-a9de-7244365570bd}</Project>
+      <Name>Sprite</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
