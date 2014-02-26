@@ -2,7 +2,7 @@
 {
     using System;
 
-    public abstract class Enemy : ICountingPoints, IDead, IEngage
+    public abstract class Enemy : IDead, IEngage
     {
         private string name;
         public abstract int HitPoints { get; set; }
