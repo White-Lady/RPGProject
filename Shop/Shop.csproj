@@ -55,6 +55,10 @@
       <Project>{5ed0410c-08d2-4c4f-a55e-43c980fb5e8d}</Project>
       <Name>Item</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sprite\Sprite.csproj">
+      <Project>{06ac061a-0a41-4f2a-a9de-7244365570bd}</Project>
+      <Name>Sprite</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
