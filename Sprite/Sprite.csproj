@@ -54,6 +54,7 @@
     <Compile Include="ICountingPoints.cs" />
     <Compile Include="IDead.cs" />
     <Compile Include="IEngage.cs" />
+    <Compile Include="NumberOutOfRangeException.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Sprite.cs" />
