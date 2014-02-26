@@ -9,18 +9,18 @@
     using System.Threading;
     public class BattleScreen
     {
-        private static void DrawAllPlayerHPs()
-        {
-            DrawEngine.PrintStringAtPosition(95, 2, "HP: " + Player.HeroesOfPlayer[0].HitPoints.ToString(), ConsoleColor.Red);
-            DrawEngine.PrintStringAtPosition(95, 17, "HP: " + Player.HeroesOfPlayer[1].HitPoints.ToString(), ConsoleColor.Red);
-            DrawEngine.PrintStringAtPosition(95, 31, "HP: " + Player.HeroesOfPlayer[2].HitPoints.ToString(), ConsoleColor.Red);
-        }
+        //private static void DrawAllPlayerHPs()
+        //{
+        //    DrawEngine.PrintStringAtPosition(95, 2, "HP: " + Player.HeroesOfPlayer[0].HitPoints.ToString(), ConsoleColor.Red);
+        //    DrawEngine.PrintStringAtPosition(95, 17, "HP: " + Player.HeroesOfPlayer[1].HitPoints.ToString(), ConsoleColor.Red);
+        //    DrawEngine.PrintStringAtPosition(95, 31, "HP: " + Player.HeroesOfPlayer[2].HitPoints.ToString(), ConsoleColor.Red);
+        //}
 
         private static void EraseAllPlayerHPs()
         {
-            DrawEngine.EraseStringOnPosition(95, 2, Player.HeroesOfPlayer[0].HitPoints.ToString().Length + 4);
-            DrawEngine.EraseStringOnPosition(95, 17, Player.HeroesOfPlayer[1].HitPoints.ToString().Length + 4);
-            DrawEngine.EraseStringOnPosition(95, 31, Player.HeroesOfPlayer[2].HitPoints.ToString().Length + 4);
+            DrawEngine.EraseStringOnPosition(95, 6, 20);
+            DrawEngine.EraseStringOnPosition(95, 21, 20/*Player.HeroesOfPlayer[1].HitPoints.ToString().Length + 4*/);
+            DrawEngine.EraseStringOnPosition(95, 35, 20/*Player.HeroesOfPlayer[2].HitPoints.ToString().Length + 4*/);
         }
 
         public static void StartBattle()
@@ -41,7 +41,8 @@
             while (battleEnded == false)
             {
                 //DrawEngine.PrintStringAtPosition(95, 2, "HP: " + Player.HeroesOfPlayer[0].HitPoints.ToString(), ConsoleColor.Red);
-                DrawAllPlayerHPs();
+                //DrawAllPlayerHPs();
+                DrawEngine.PrintNamesAndStatsOfAllParticipantsInTheBattle("Okoto", "Biqcha", Player.HeroesOfPlayer[0].HitPoints, "Blacky", Player.HeroesOfPlayer[2].HitPoints, "Whity", Player.HeroesOfPlayer[1].HitPoints);
 
                 //Player's turn
                 if (playersTurn)
@@ -78,7 +79,7 @@
                     //DrawEngine.EraseStringOnPosition(95, 2, Player.HeroesOfPlayer[0].HitPoints.ToString().Length + 4);
 
                     int damage = ivanOkoto.Attack();
-                    if (enemyAttackCounter < Player.HeroesOfPlayer.Length -1)
+                    if (enemyAttackCounter < Player.HeroesOfPlayer.Length - 1)
                     {
                         enemyAttackCounter++;
                     }
