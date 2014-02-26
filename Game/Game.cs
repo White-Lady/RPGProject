@@ -6,11 +6,22 @@
     using System.Threading;
     using Shop;
     using Sprite;
+    using Sprite.Enemy;
     using GameWorld;
     using System.Linq;
+    using System.Collections.Generic;
 
     class Game
     {
+        public static List<Enemy> enemies = new List<Enemy>
+        {
+            new Pirat("The Black Beard", new Position(30, 10)),
+            new Pirat("David Jones", new Position(40, 15)),
+            new Wolf("The white tooth", new Position(40, 17)),
+            new Wolf("Rabid wolf", new Position(70, 25)),
+            new Dragon("Smaug", new Position(100, 35))
+        };
+
         public static void Battle(object obj, EventArgs arg)
         {
             BattleScreen.StartBattle();
@@ -37,7 +48,11 @@
             world.ReadWorldFromFile("testmap.txt");
 
             //Enemy test
-            World.WorldMatrix[5, 10] = CellState.Enemy;
+            //World.WorldMatrix[5, 10] = CellState.Enemy;
+            foreach (var enemy in enemies)
+            {
+               // World.WorldMatrix[]
+            }
 
             //Console.Write(world);
             DrawEngine.DrawWorld(World.WorldMatrix);

@@ -31,7 +31,7 @@
         {
             for (int i = 0; i < EnemiesNumber; i++)
             {
-                pArmy.Add(new Pirat("OneEyePirate", SingleHitPoints, SingleAttackPoints, SingleDefensePoints, PE));
+                pArmy.Add(new Pirat("OneEyePirate", PE, SingleHitPoints, SingleAttackPoints, SingleDefensePoints));
             }
         }
 

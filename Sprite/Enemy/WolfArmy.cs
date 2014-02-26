@@ -31,7 +31,7 @@
         {
             for (int i = 0; i < EnemiesNumber; i++)
             {
-                wArmy.Add(new Wolf("WhiteSkinBlueEyesWolf", SingleHitPoints, SingleAttackPoints, SingleDefensePoints, PE));
+                wArmy.Add(new Wolf("WhiteSkinBlueEyesWolf", PE, SingleHitPoints, SingleAttackPoints, SingleDefensePoints));
             }
         }
 

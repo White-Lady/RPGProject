@@ -5,7 +5,7 @@
     public class Wolf : Enemy
     {
 
-        public Wolf( string name, int hP, int aP, int dP, Position pE) 
+        public Wolf( string name, Position pE, int hP = 100, int aP = 100, int dP = 20)
             : base(name, hP, aP, dP, pE)
         {
         }

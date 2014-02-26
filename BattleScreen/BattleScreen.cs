@@ -26,7 +26,7 @@
         public static void StartBattle()
         {
             //TODO: Get the instances of the player and the engaged enemy
-            Pirat ivanOkoto = new Pirat("Ivan", 150, 30, 40, new Position(20, 40));
+            Pirat ivanOkoto = new Pirat("Ivan", new Position(20, 40), 150, 30, 40);
             bool battleEnded = false;
             bool playersTurn = true;
             int enemyAttackCounter = 0;
