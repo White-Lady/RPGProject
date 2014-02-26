@@ -1,6 +1,6 @@
 ﻿namespace Item
 {
-    public abstract class Item 
+    public interface IItem 
     {
         public int AdditionalAP { get; set; }
         public int AdditionalAPP { get; set; }
