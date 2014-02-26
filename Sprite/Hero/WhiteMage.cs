@@ -24,7 +24,16 @@
         {
             if (numberOfSpell == 1)
             {
-                
+                Player.HeroesOfPlayer[whoToApplyTo].HitPoints += arrSpells[0].Power + this.AbilityPowerPoints;
+                this.mana -= arrSpells[0].ManaCost;
+            }
+            else if (numberOfSpell == 2)
+            {
+                foreach (var item in Player.HeroesOfPlayer)
+                {
+                    item.DefensePoints += arrSpells[2].Power + this.AbilityPowerPoints; 
+                }
+                this.mana -= arrSpells[2].ManaCost;
             }
         }
         //work in progress
