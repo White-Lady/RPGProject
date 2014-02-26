@@ -66,7 +66,7 @@
                         playersTurn = false;
 
                     }
-                    else if (pressedKey.Key == ConsoleKey.D0)
+                    else if (pressedKey.Key == ConsoleKey.D5)
                     {
                         battleEnded = true;
                         Player.XPosition++;
