@@ -6,6 +6,7 @@
     public class WolfArmy : EnemyArmy 
     {
         public override int HitPoints { get; set; }
+        public Position PE { get; set; }
 
         public override int EnemiesNumber
         {
@@ -21,8 +22,8 @@
 
         List<Wolf> wArmy = new List<Wolf>();
 
-        public WolfArmy(string name, int hP, int aP, int dP) 
-            : base(name, hP, aP, dP)
+        public WolfArmy(string name, int hP, int aP, int dP, Position pE) 
+            : base(name, hP, aP, dP, pE)
         {
             
         }
@@ -31,7 +32,7 @@
         {
             for (int i = 0; i < EnemiesNumber; i++)
             {
-                wArmy.Add(new Wolf("WhiteSkinBlueEyesWolf", SingleHitPoints, SingleAttackPoints, SingleDefensePoints));
+                wArmy.Add(new Wolf("WhiteSkinBlueEyesWolf", SingleHitPoints, SingleAttackPoints, SingleDefensePoints, PE));
             }
         }
 

@@ -14,8 +14,8 @@ namespace Sprite.Enemy
         public int SingleAttackPoints { get; set; }
         public int SingleDefensePoints { get; set; }
 
-        public EnemyArmy(string name, int hP, int aP, int dP) 
-            : base(name, hP, aP, dP)
+        public EnemyArmy(string name, int hP, int aP, int dP, Position pE) 
+            : base(name, hP, aP, dP, pE)
         {
             this.HitPoints = hP * EnemiesNumber;
             this.SingleHitPoints = hP;

@@ -59,7 +59,7 @@
         }
 
         //method for gaining experience
-        public void gainExperience(uint iAmount)
+        public void GainExperience(uint iAmount)
         {
             this.experience += iAmount;
             if (this.experience >= this.exp_to_level)

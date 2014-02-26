@@ -6,6 +6,7 @@
     public class PiratArmy : EnemyArmy
     {
         public override int HitPoints { get; set; }
+        public Position PE { get; set; }
 
         public override int EnemiesNumber
         {
@@ -21,8 +22,8 @@
 
         List<Pirat> pArmy = new List<Pirat>();
 
-        public PiratArmy(string name, int hP, int aP, int dP)
-            : base(name, hP, aP, dP)
+        public PiratArmy(string name, int hP, int aP, int dP, Position pE)
+            : base(name, hP, aP, dP, pE)
         {
             
         }
@@ -31,7 +32,7 @@
         {
             for (int i = 0; i < EnemiesNumber; i++)
             {
-                pArmy.Add(new Pirat("OneEyePirate", SingleHitPoints, SingleAttackPoints, SingleDefensePoints));
+                pArmy.Add(new Pirat("OneEyePirate", SingleHitPoints, SingleAttackPoints, SingleDefensePoints, PE));
             }
         }
 
@@ -43,5 +44,7 @@
                 AmountHitPoints = HitPoints;
             }
         }
+
+        
     }
 }

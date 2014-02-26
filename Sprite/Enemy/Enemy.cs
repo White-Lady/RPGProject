@@ -10,6 +10,7 @@
         public int DefensePoints { get; set; }
         //public bool IsHitted { get; set; }
         public bool IsDead { get; set; }
+        Position EnemyPosition { get; set; }
 
         public string Name
         {
@@ -23,13 +24,14 @@
             }
         }
 
-        protected Enemy(string name, int hP, int aP, int dP)
+        protected Enemy(string name, int hP, int aP, int dP, Position pEnemy)
         {
             this.name = name;
             this.HitPoints = hP;
             this.AttackPoints = aP;
             this.DefensePoints = dP;
             this.IsDead = false;
+            this.EnemyPosition = pEnemy;
         }
 
         public virtual int Attack()
