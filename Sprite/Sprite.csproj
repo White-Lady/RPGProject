@@ -51,7 +51,6 @@
     <Compile Include="Hero\Hero.cs" />
     <Compile Include="Hero\Spell.cs" />
     <Compile Include="Hero\WhiteMage.cs" />
-    <Compile Include="IDead.cs" />
     <Compile Include="IEngage.cs" />
     <Compile Include="NumberOutOfRangeException.cs" />
     <Compile Include="Player.cs" />
