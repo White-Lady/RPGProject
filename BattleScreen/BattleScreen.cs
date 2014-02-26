@@ -7,6 +7,7 @@
     using Sprite.Hero;
     using Sprite;
     using System.Threading;
+
     public class BattleScreen
     {
         //private static void DrawAllPlayerHPs()
@@ -33,6 +34,7 @@
             int heroOnTurn = 0;
             Console.Clear();
             DrawEngine.DrawBattleScreen();
+
             if (ivanOkoto is Pirat)
             {
                 DrawEngine.DrawPirat();

@@ -51,7 +51,7 @@
             //World.WorldMatrix[5, 10] = CellState.Enemy;
             foreach (var enemy in enemies)
             {
-               // World.WorldMatrix[]
+                World.WorldMatrix[enemy.EnemyPosition.Y, enemy.EnemyPosition.X] = CellState.Enemy;
             }
 
             //Console.Write(world);

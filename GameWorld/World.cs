@@ -11,7 +11,7 @@
         private const int distance = 10; //the distance between objects
         private int xLen;
         private int yLen;//Dimension of the world
-        private List<Place> places;
+        //private List<Place> places;
         private static CellState[,] worldMatrix;
 
         public World(int xLen, int yLen /*, List<Place> places*/)
@@ -132,14 +132,14 @@
             }
         }
 
-        public void DrawPlaces()
-        {
-            foreach (var item in places)
-            {
-                item.Draw();
-            }
-            Console.SetCursorPosition(1, 1);
-        }
+        //public void DrawPlaces()
+        //{
+        //    foreach (var item in places)
+        //    {
+        //        item.Draw();
+        //    }
+        //    Console.SetCursorPosition(1, 1);
+        //}
 
         public override string ToString()
         {

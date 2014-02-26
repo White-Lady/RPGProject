@@ -10,7 +10,7 @@
         public int DefensePoints { get; set; }
         //public bool IsHitted { get; set; }
         public bool IsDead { get; set; }
-        Position EnemyPosition { get; set; }
+        public Position EnemyPosition { get; set; }
 
         public string Name
         {
