@@ -14,13 +14,17 @@
         public static event EventHandler EnteredShop;
         private static int xPosition = 1;
         private static int yPosition = 1;
+        private static int gold = 1000;
         public static Position PositionToBeChecked
         {
             get { return positionToBeChecked; }
             set { positionToBeChecked = value; }
         }
         public static Hero.Hero[] HeroesOfPlayer { get; set; }
-        public static int Gold { get; set; }
+        public static int Gold {
+            get { return gold; }
+            set { gold = value; }
+            }
         
         public static int XPosition
         {

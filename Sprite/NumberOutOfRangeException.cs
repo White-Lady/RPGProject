@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprite
 {
-    class NumberOutOfRangeException : ApplicationException
+    public class NumberOutOfRangeException : ApplicationException
     {
         private int Num { get; set; }
 
