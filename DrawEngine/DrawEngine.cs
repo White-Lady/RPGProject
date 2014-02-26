@@ -632,6 +632,7 @@ namespace DrawEngine
             PrintStringAtPosition(2, 14, "Magic Wand - Additional APP: 100, Price: 1000, press 2 to buy.");
             PrintStringAtPosition(2, 16, "Vest - Additional DP: 100, Price: 1000, press 3 to buy.");
             PrintStringAtPosition(2, 18, "Giant's Tonic - Additional HP: 100, Price = 100, press 4 to buy.");
+            PrintStringAtPosition(2, 20, "Press 0 to exit.");
         }
     }
 }

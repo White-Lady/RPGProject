@@ -23,7 +23,13 @@
         {
             FillShop();
             DrawEngine.DrawShop();
-
+            DrawEngine.PrintStringAtPosition(100, 3, Player.Gold.ToString());
+            bool exit = false;
+            ConsoleKeyInfo pressedKey = new ConsoleKeyInfo();
+            while (exit == false)
+            {
+                
+            }
         }
         public static void BuyItem(byte noOfHero, byte slotInInventory, uint noOfItem)
         {
