@@ -624,6 +624,18 @@ namespace DrawEngine
                 }
             }
         }
+        public static void DrawShop()
+        {
+            PrintStringAtPosition(50, 3, "Welcome to the shop!");
+            PrintStringAtPosition(2, 10, "Items:");
+            PrintStringAtPosition(2, 12, "Long Sword- Additional AP: 100, Price: 100, press 1 to buy.");
+            PrintStringAtPosition(2, 14, "Magic Wand - Additional APP: 100, Price: 1000, press 2 to buy.");
+            PrintStringAtPosition(2, 16, "Vest - Additional DP: 100, Price: 1000, press 3 to buy.");
+            PrintStringAtPosition(2, 18, "Giant's Tonic - Additional HP: 100, Price = 100, press 4 to buy.");
+        }
     }
 }
-
+        //private static LongSword LongSwordItem = new LongSword();
+        //private static MagicWand MagicWandItem = new MagicWand();
+        //private static Vest VestItem = new Vest();
+        //private static GiantsTonic GiantsTonicItem = new GiantsTonic();

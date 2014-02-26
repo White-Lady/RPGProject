@@ -47,6 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DrawEngine\DrawEngine.csproj">
+      <Project>{fe258cc8-9fe2-4bcc-98b3-14ecf491ab5c}</Project>
+      <Name>DrawEngine</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Item\Item.csproj">
       <Project>{5ed0410c-08d2-4c4f-a55e-43c980fb5e8d}</Project>
       <Name>Item</Name>

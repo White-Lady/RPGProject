@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using DrawEngine;
     using Item;
     public static class Shop
     {
@@ -20,7 +21,8 @@
         public static void OpenShop()
         {
             FillShop();
-            //DrawEngine.DrawShop
+            DrawEngine.DrawShop();
+
         }
     }
 }
