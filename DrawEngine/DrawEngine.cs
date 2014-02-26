@@ -140,6 +140,14 @@ namespace DrawEngine
             Console.Write(' ');
         }
 
+        public static void EraseStringOnPosition(int startX, int posY, int length)
+        {
+            for (int i = 0; i < length; i++)
+            {
+                EraseCharOnPosition(startX + i, posY);
+            }
+        }
+
         //private static void FillBuffer(CellState[,] world)
         //{
         //    buffer = new DisplayChar[world.GetLength(0), world.GetLength(1)];

@@ -18,6 +18,12 @@
             int enemyAttackCounter = 0;
             Console.Clear();
             DrawEngine.DrawBattleScreen();
+
+            //Console.SetCursorPosition(95, 2);
+            //Console.Write("HP: ");
+            DrawEngine.PrintStringAtPosition(95, 2, "HP: ", ConsoleColor.Red);
+            DrawEngine.PrintStringAtPosition(99, 2, Player.HeroesOfPlayer[0].HitPoints.ToString(), ConsoleColor.Red);
+
             while (battleEnded == false)
             {
                 Console.SetCursorPosition(95, 2);
@@ -34,7 +40,7 @@
                         ivanOkoto.Attacked(damage);
                         Console.SetCursorPosition(6, 31);
                         Console.WriteLine("Enemy HP: {0}", ivanOkoto.HitPoints);
-                        Player.HeroesOfPlayer[0].HitPoints--;
+                        //Player.HeroesOfPlayer[0].HitPoints--;
                         playersTurn = false;
 
                     }
@@ -47,6 +53,8 @@
                 //Enemy's turn
                 else
                 {
+                    DrawEngine.EraseStringOnPosition(99, 2, Player.HeroesOfPlayer[0].HitPoints.ToString().Length);
+
                     int damage = ivanOkoto.Attack();
                     if (enemyAttackCounter < Player.HeroesOfPlayer.Length -1)
                     {
@@ -57,6 +65,7 @@
                         enemyAttackCounter = 0;
                     }
                     Player.HeroesOfPlayer[enemyAttackCounter].Attacked(damage);
+                    playersTurn = true;
                 }
             }
             DrawEngine.DrawWorld(World.WorldMatrix);
