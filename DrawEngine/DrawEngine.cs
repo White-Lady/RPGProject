@@ -368,8 +368,8 @@ namespace DrawEngine
 
             // Prints the name and HP of the fighter in the right place
             int fighterNameLength = fighterName.Length;
-            int startingPositionOfTheFighterName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - nameLength) / 2;
-            Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheName, StartingRow + 2);
+            int startingPositionOfTheFighterName = ((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2 - (nameLength / 2));
+            Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheFighterName, StartingRow + 2);
             Console.WriteLine(fighterName);
             int printHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 3);
             Console.SetCursorPosition(HeroHitPiontsWindowWidth - printHPInTheCenterOfTheWindow, StartingRow + 5);
@@ -378,7 +378,7 @@ namespace DrawEngine
             // Prints the name and HP of the black mage in the right place
             int blackMageNameLength = blackMageName.Length;
             int blackMageStartingPositionOfTheName = (HeroHitPiontsWindowWidth - HeroesWindowWidth - GapBetweenWindows - blackMageNameLength) / 2;
-            Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + startingPositionOfTheName, HeroHitPointsWindowHeight + StartingRow + 2);
+            Console.SetCursorPosition(HeroesWindowWidth + GapBetweenWindows + blackMageStartingPositionOfTheName, HeroHitPointsWindowHeight + StartingRow + 2);
             Console.WriteLine(blackMageName);
             int printBlackMageHPInTheCenterOfTheWindow = (((HeroHitPiontsWindowWidth - (HeroesWindowWidth + GapBetweenWindows)) / 2) + 3);
             Console.SetCursorPosition(HeroHitPiontsWindowWidth - printBlackMageHPInTheCenterOfTheWindow, HeroHitPointsWindowHeight + StartingRow + 5);
