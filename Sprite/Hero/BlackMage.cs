@@ -20,6 +20,26 @@
         {
 
         }
+        public int castSpell(int numberOfSpell, int whoToApplyTo)
+        {
+            int magicDamage = 0;
+            if (numberOfSpell == 1)
+            {
+                magicDamage += arrSpells[0].Power + this.AbilityPowerPoints;
+                this.mana -= arrSpells[0].ManaCost;
+            }
+            else if (numberOfSpell == 2)
+            {
+                magicDamage += arrSpells[1].Power + this.AbilityPowerPoints;
+                this.mana -= arrSpells[1].ManaCost;
+            }
+            else if (numberOfSpell == 3)
+            {
+                magicDamage += arrSpells[2].Power + this.AbilityPowerPoints;
+                this.mana -= arrSpells[2].ManaCost;
+            }
+            return magicDamage;
+        }
 
         //gain mana and lose mana functions
     }
