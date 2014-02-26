@@ -33,6 +33,20 @@
             int heroOnTurn = 0;
             Console.Clear();
             DrawEngine.DrawBattleScreen();
+            if (ivanOkoto is Pirat)
+            {
+                DrawEngine.DrawPirat();
+            }
+
+            if (ivanOkoto is Dragon)
+            {
+                DrawEngine.DrawDragon();
+            }
+
+            if (ivanOkoto is Wolf)
+            {
+                DrawEngine.DrawWolf();
+            }
 
             //Console.SetCursorPosition(95, 2);
             //Console.Write("HP: ");
