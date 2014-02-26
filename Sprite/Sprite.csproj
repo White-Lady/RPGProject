@@ -49,6 +49,7 @@
     <Compile Include="Hero\BlackMage.cs" />
     <Compile Include="Hero\Fighter.cs" />
     <Compile Include="Hero\Hero.cs" />
+    <Compile Include="Hero\ICast.cs" />
     <Compile Include="Hero\Spell.cs" />
     <Compile Include="Hero\WhiteMage.cs" />
     <Compile Include="IEngage.cs" />

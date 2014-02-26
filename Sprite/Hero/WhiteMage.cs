@@ -1,7 +1,7 @@
 ﻿namespace Sprite.Hero
 {
     using System;
-    public class WhiteMage : Hero
+    public class WhiteMage : Hero, ICast
     {
         private int mana;
         private int maxMana;
@@ -20,7 +20,13 @@
         {
 
         }
-
+        public void castSpell(int numberOfSpell, int whoToApplyTo)
+        {
+            if (numberOfSpell == 1)
+            {
+                
+            }
+        }
         //work in progress
         //public castSpell (int spellNum,...);
         //public Spell[] getSpells() { return this.arrSpells; };
