@@ -5,7 +5,7 @@
     public abstract class Enemy : IDead, IEngage
     {
         private string name;
-        public abstract int HitPoints { get; set; }
+        public int HitPoints { get; set; }
         public int AttackPoints { get; set; }
         public int DefensePoints { get; set; }
         //public bool IsHitted { get; set; }
@@ -24,9 +24,9 @@
             }
         }
 
-        protected Enemy(string name, int hP, int aP, int dP, Position pEnemy)
+        protected Enemy(string iName, int hP, int aP, int dP, Position pEnemy)
         {
-            this.name = name;
+            this.name = iName;
             this.HitPoints = hP;
             this.AttackPoints = aP;
             this.DefensePoints = dP;

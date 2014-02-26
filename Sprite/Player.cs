@@ -3,6 +3,7 @@
     using System;
     using Shop;
     using GameWorld;
+    using Hero;
 
     public static class Player
     {
@@ -18,10 +19,9 @@
             get { return positionToBeChecked; }
             set { positionToBeChecked = value; }
         }
-
         public static Hero.Hero[] HeroesOfPlayer { get; set; }
         public static int Gold { get; set; }
-
+        
         public static int XPosition
         {
             get { return xPosition; }
@@ -199,6 +199,13 @@
             {
                 Console.WriteLine("The item slot is empty, nothing to sell.");
             }
+        }
+        public static void FillHeroes()
+        {
+            HeroesOfPlayer = new Hero.Hero[3];
+            HeroesOfPlayer[0] = new Fighter(200, 100, 20);
+            HeroesOfPlayer[1] = new BlackMage(150, 10, 20, 400, 100);
+            HeroesOfPlayer[2] = new WhiteMage(150, 10, 20, 400, 100);
         }
 
 

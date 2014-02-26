@@ -37,6 +37,7 @@
             DrawEngine.DrawWorld(World.WorldMatrix);
 
             Player.EnemyEncountered += new EventHandler(Battle);
+            Player.FillHeroes();
 
             while (true)
             {

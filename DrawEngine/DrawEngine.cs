@@ -139,10 +139,6 @@ namespace DrawEngine
             Console.SetCursorPosition(posX, posY);
             Console.Write(' ');
         }
-        public static void ReDrawWorld()
-        {
-            //Console.Write();
-        }
 
         //private static void FillBuffer(CellState[,] world)
         //{

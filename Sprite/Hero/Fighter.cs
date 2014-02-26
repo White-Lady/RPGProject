@@ -4,7 +4,7 @@
     public class Fighter : Hero, IEngage
     {
         public Fighter(int hP, int aP, int dP)
-            : base(20, 8, 5, 0)
+            : base(hP, aP, dP,0)
         {
 
         }

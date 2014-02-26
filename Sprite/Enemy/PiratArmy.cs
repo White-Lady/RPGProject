@@ -5,7 +5,6 @@
 
     public class PiratArmy : EnemyArmy
     {
-        public override int HitPoints { get; set; }
         public Position PE { get; set; }
 
         public override int EnemiesNumber
