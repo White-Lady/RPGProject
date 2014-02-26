@@ -218,6 +218,10 @@ namespace DrawEngine
                             charToBeDrawn = '#';
                             elementColor = ConsoleColor.White;
                             break;
+                        case CellState.DeadEnemy:
+                            charToBeDrawn = 'X';
+                            elementColor = ConsoleColor.Blue;
+                            break;
                         default:
                             break;
                     }

@@ -5,6 +5,7 @@
         EmptySpace,
         Enemy,
         Shop,
-        Wall
+        Wall,
+        DeadEnemy
     }
 }

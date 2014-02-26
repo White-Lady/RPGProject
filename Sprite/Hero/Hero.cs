@@ -81,7 +81,7 @@
         {
             if (damage < this.defensePoints)
             {
-                damage = 0;
+                damage = 5;
             }
             else if (damage > this.defensePoints)
             {

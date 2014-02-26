@@ -50,7 +50,8 @@
                     if (ivanOkoto.IsDead == true)
                     {
                         battleEnded = true;
-                        World.WorldMatrix[Player.YPosition, Player.XPosition] = CellState.EmptySpace;
+                        World.WorldMatrix[Player.YPosition, Player.XPosition] = CellState.DeadEnemy;
+                        break;
                     }
 
                     ConsoleKeyInfo pressedKey = Console.ReadKey(true);
@@ -58,7 +59,7 @@
                     {
                         if (heroOnTurn == Player.HeroesOfPlayer.Length)
                         {
-                            heroOnTurn = 1;
+                            heroOnTurn = 0;
                         }
 
                         Console.SetCursorPosition(6, 30);

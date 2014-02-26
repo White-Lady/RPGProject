@@ -160,6 +160,10 @@
                     return true;
                 case CellState.Wall:
                     return false;
+                case CellState.DeadEnemy:
+                    XPosition = pos.X;
+                    YPosition = pos.Y;
+                    return true;
                 default:
                     return false;
             }

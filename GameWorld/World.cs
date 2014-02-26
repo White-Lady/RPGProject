@@ -164,6 +164,9 @@
                         case CellState.Wall:
                             charToBeDrawn = '#';
                             break;
+                        case CellState.DeadEnemy:
+                            charToBeDrawn = 'X';
+                            break;
                         default:
                             break;
                     }

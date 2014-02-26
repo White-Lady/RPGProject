@@ -44,7 +44,7 @@
         {
             if (damage < this.DefensePoints)
             {
-                damage = 0;
+                damage = 5;
             }
             else if (damage > this.DefensePoints)
             {
