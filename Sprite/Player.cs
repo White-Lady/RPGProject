@@ -21,11 +21,12 @@
             set { positionToBeChecked = value; }
         }
         public static Hero.Hero[] HeroesOfPlayer { get; set; }
-        public static int Gold {
+        public static int Gold
+        {
             get { return gold; }
             set { gold = value; }
-            }
-        
+        }
+
         public static int XPosition
         {
             get { return xPosition; }
@@ -52,6 +53,9 @@
         {
             bool isValidPosition = false;
 
+            oldPosition.X = XPosition;
+            oldPosition.Y = YPosition;
+
             if (pressedKey.Key == ConsoleKey.UpArrow)
             {
                 if (YPosition > 0)
@@ -60,12 +64,12 @@
                     positionToBeChecked.Y = YPosition - 1;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
-                    if (isValidPosition)
-                    {
-                        oldPosition.X = XPosition;
-                        oldPosition.Y = YPosition;
-                        YPosition--;
-                    }
+                    //if (isValidPosition)
+                    //{
+                    //    oldPosition.X = XPosition;
+                    //    oldPosition.Y = YPosition;
+                    //    YPosition--;
+                    //}
                 }
             }
             else if (pressedKey.Key == ConsoleKey.DownArrow)
@@ -76,12 +80,12 @@
                     positionToBeChecked.Y = YPosition + 1;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
-                    if (isValidPosition)
-                    {
-                        oldPosition.X = XPosition;
-                        oldPosition.Y = YPosition;
-                        YPosition++;
-                    }
+                    //if (isValidPosition)
+                    //{
+                    //    oldPosition.X = XPosition;
+                    //    oldPosition.Y = YPosition;
+                    //    YPosition++;
+                    //}
                 }
             }
             else if (pressedKey.Key == ConsoleKey.LeftArrow)
@@ -92,12 +96,12 @@
                     positionToBeChecked.Y = YPosition;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
-                    if (isValidPosition)
-                    {
-                        oldPosition.X = XPosition;
-                        oldPosition.Y = YPosition;
-                        XPosition--;
-                    }
+                    //if (isValidPosition)
+                    //{
+                    //    oldPosition.X = XPosition;
+                    //    oldPosition.Y = YPosition;
+                    //    XPosition--;
+                    //}
                 }
             }
             else if (pressedKey.Key == ConsoleKey.RightArrow)
@@ -108,12 +112,12 @@
                     positionToBeChecked.Y = YPosition;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
-                    if (isValidPosition)
-                    {
-                        oldPosition.X = XPosition;
-                        oldPosition.Y = YPosition;
-                        XPosition++;
-                    }
+                    //if (isValidPosition)
+                    //{
+                    //    oldPosition.X = XPosition;
+                    //    oldPosition.Y = YPosition;
+                    //    XPosition++;
+                    //}
                 }
             }
         }
@@ -141,11 +145,17 @@
             switch (World.WorldMatrix[pos.Y, pos.X])
             {
                 case CellState.EmptySpace:
+                    XPosition = pos.X;
+                    YPosition = pos.Y;
                     return true;
                 case CellState.Enemy:
+                    XPosition = pos.X;
+                    YPosition = pos.Y;
                     OnEnemyEncountered();
                     return true;
                 case CellState.Shop:
+                    XPosition = pos.X;
+                    YPosition = pos.Y;
                     OnEnteredShop();
                     return true;
                 case CellState.Wall:
