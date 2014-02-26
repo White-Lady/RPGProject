@@ -4,6 +4,7 @@
     using DrawEngine;
     using BattleScreen;
     using System.Threading;
+    using Shop;
     using Sprite;
     using GameWorld;
     using System.Linq;
@@ -13,6 +14,11 @@
         public static void Battle(object obj, EventArgs arg)
         {
             BattleScreen.StartBattle();
+        }
+
+        public static void ShowShop(object obj, EventArgs arg)
+        {
+            Shop.OpenShop();
         }
 
         static void Main()
@@ -37,6 +43,7 @@
             DrawEngine.DrawWorld(World.WorldMatrix);
 
             Player.EnemyEncountered += new EventHandler(Battle);
+            Player.EnteredShop += new EventHandler(ShowShop);
             Player.FillHeroes();
 
             while (true)

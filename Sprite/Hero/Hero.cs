@@ -2,7 +2,6 @@
 {
     using System;
     using Item;
-    using Shop;
 
     public abstract class Hero : IEngage
     {

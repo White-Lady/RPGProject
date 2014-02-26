@@ -61,6 +61,10 @@
       <Project>{ab7a0d36-aebd-4005-a9a2-5f32964a9042}</Project>
       <Name>GameWorld</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Shop\Shop.csproj">
+      <Project>{38115db8-4d28-4093-867d-f21e17727929}</Project>
+      <Name>Shop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sprite\Sprite.csproj">
       <Project>{06ac061a-0a41-4f2a-a9de-7244365570bd}</Project>
       <Name>Sprite</Name>

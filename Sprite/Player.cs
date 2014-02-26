@@ -11,6 +11,7 @@
         private static Position positionToBeChecked;
         private static Position oldPosition;
         public static event EventHandler EnemyEncountered;
+        public static event EventHandler EnteredShop;
         private static int xPosition = 1;
         private static int yPosition = 1;
         public static Position PositionToBeChecked
@@ -121,6 +122,14 @@
             }
         }
 
+        private static void OnEnteredShop()
+        {
+            if (EnteredShop != null)
+            {
+                EnteredShop(null, new EventArgs());
+            }
+        }
+
         public static bool CheckForCollision(Position pos)
         {
             //return true;
@@ -133,7 +142,7 @@
                     OnEnemyEncountered();
                     return true;
                 case CellState.Shop:
-                    //OnStartShop();
+                    OnEnteredShop();
                     return true;
                 case CellState.Wall:
                     return false;
