@@ -336,18 +336,27 @@ namespace DrawEngine
             {
                 Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength  +2, fighterHeight + (fighterHeight / 2) - 1);
                 Console.Write(playerTurn);
+
+                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength + 2, whiteMageHeight + 2);
+                Console.WriteLine("   ");
             }
 
             if (whosTunrItIs == 1)
             {
                 Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength + 2, blackMageHeight + 2);
                 Console.Write(playerTurn);
+
+                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength + 2, fighterHeight + (fighterHeight / 2) - 1);
+                Console.WriteLine("   ");
             }
 
             if (whosTunrItIs == 2)
             {
                 Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength + 2, whiteMageHeight + 2);
                 Console.Write(playerTurn);
+
+                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength + 2, blackMageHeight + 2);
+                Console.WriteLine("   ");
             }
 
             whosTunrItIs++;

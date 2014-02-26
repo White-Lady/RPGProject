@@ -63,7 +63,8 @@
                         Console.SetCursorPosition(6, 31);
                         Console.WriteLine("Enemy HP: {0}", ivanOkoto.HitPoints);
                         heroOnTurn++;
-                        playersTurn = false;
+                        playersTurn = false; 
+                        DrawEngine.DrawPlayerTurn();
 
                     }
                     else if (pressedKey.Key == ConsoleKey.D5)
