@@ -36,6 +36,7 @@
             //Console.Write(world);
             DrawEngine.DrawWorld(World.WorldMatrix);
 
+            Player.EnemyEncountered += new EventHandler(Battle);
 
             while (true)
             {
@@ -54,8 +55,6 @@
                 //DrawEngine.PrintCharAtPosition(119, 49, 'H', ConsoleColor.Green);
                 DrawEngine.PrintCharAtPosition(Player.XPosition, Player.YPosition, Player.PlayerChar, Player.CharColor);
                 //DrawEngine.PrintCharAtPosition(10, 30, 'B', ConsoleColor.Red);
-                Player.EnemyEncountered += new EventHandler(Battle);
-                
                 Thread.Sleep(50);
             }
         }
