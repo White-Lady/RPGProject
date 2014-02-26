@@ -53,7 +53,7 @@
 
             if (this.HitPoints - damage <= 0)
             {
-                IsDead = true;
+                this.IsDead = true;
             }
             else
             {

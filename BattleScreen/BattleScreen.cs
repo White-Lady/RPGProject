@@ -47,6 +47,12 @@
                 //Player's turn
                 if (playersTurn)
                 {
+                    if (ivanOkoto.HitPoints <= 0)
+                    {
+                        battleEnded = true;
+                        World.WorldMatrix[Player.YPosition, Player.XPosition] = CellState.EmptySpace;
+                    }
+
                     ConsoleKeyInfo pressedKey = Console.ReadKey(true);
                     if (pressedKey.Key == ConsoleKey.D1)
                     {
@@ -88,8 +94,14 @@
                     {
                         enemyAttackCounter = 0;
                     }
+
                     Player.HeroesOfPlayer[enemyAttackCounter].Attacked(damage);
                     playersTurn = true;
+
+                    if (Player.HeroesOfPlayer[0].IsDead == true)
+                    {
+                        battleEnded = true;
+                    }
                 }
             }
             DrawEngine.DrawWorld(World.WorldMatrix);
