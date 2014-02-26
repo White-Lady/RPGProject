@@ -33,9 +33,6 @@
             //Enemy test
             World.WorldMatrix[30, 10] = CellState.Enemy;
 
-            //Create a new player
-            Player player = new Player(1, 1);
-
             Console.Write(world);
             //DrawEngine.DrawWorld(World.WorldMatrix);
 
@@ -49,15 +46,15 @@
                     {
                         Console.ReadKey(true);
                     }
-                    player.Move(pressedKey);
+                    Player.Move(pressedKey);
 
-                    DrawEngine.EraseCharOnPosition(player.OldPosition.X, player.OldPosition.Y);
+                    DrawEngine.EraseCharOnPosition(Player.OldPosition.X, Player.OldPosition.Y);
                 }
 
                 //DrawEngine.PrintCharAtPosition(119, 49, 'H', ConsoleColor.Green);
-                DrawEngine.PrintCharAtPosition(player.XPosition, player.YPosition, Player.PlayerChar, Player.CharColor);
+                DrawEngine.PrintCharAtPosition(Player.XPosition, Player.YPosition, Player.PlayerChar, Player.CharColor);
                 //DrawEngine.PrintCharAtPosition(10, 30, 'B', ConsoleColor.Red);
-                player.EnemyEncountered += new EventHandler(Battle);
+                Player.EnemyEncountered += new EventHandler(Battle);
                 
                 Thread.Sleep(50);
             }

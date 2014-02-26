@@ -18,11 +18,11 @@
             {
                 //if (enemy.HitPoints <= 0)
                 //{
-                //    battleEnded = true;
+                //  battleEnded = true;
                 //}
                 //else if (player.HeroesOfPlayer[0].HitPoints <= 1 && player.HeroesOfPlayer[1].HitPoints <= 1 && player.HeroesOfPlayer[2].HitPoints <= 1)
                 //{
-                //    battleEnded = true;
+                //battleEnded = true;
                 //}
                 // check if battle is ended and set bool to true.
                 DrawEngine.DrawBattleScreen();

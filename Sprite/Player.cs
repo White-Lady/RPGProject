@@ -4,40 +4,42 @@
     using Shop;
     using GameWorld;
 
-    public class Player
+    public static class Player
     {
         public const char PlayerChar = (char)2;
         public const ConsoleColor CharColor = ConsoleColor.Green;
-        private Position positionToBeChecked;
-        private Position oldPosition;
-        public event EventHandler EnemyEncountered;
+        private static Position positionToBeChecked;
+        private static Position oldPosition;
+        public static event EventHandler EnemyEncountered;
+        public static int xPosition = 1;
+        public static int yPosition = 1;
 
-        public Player(int x, int y)
+        public static Hero.Hero[] HeroesOfPlayer { get; set; }
+        public static int Gold { get; set; }
+
+        public static int XPosition
         {
-            this.XPosition = x;
-            this.YPosition = y;
-            this.positionToBeChecked = new Position(x, y);
+            get { return xPosition; }
+            set { xPosition = value; }
         }
-
-        public Hero.Hero[] HeroesOfPlayer { get; set; }
-        public int Gold { get; set; }
-
-        public int XPosition { get; set; }
-        public int YPosition { get; set; }
-
-        public Position OldPosition
-        { 
+        public static int YPosition
+        {
+            get { return yPosition; }
+            set { yPosition = value; }
+        }
+        public static Position OldPosition
+        {
             get
             {
-                return this.oldPosition;
+                return oldPosition;
             }
             set
             {
-                this.oldPosition = value;
+                oldPosition = value;
             }
         }
- 
-        public void Move(ConsoleKeyInfo pressedKey)
+
+        public static void Move(ConsoleKeyInfo pressedKey)
         {
             bool isValidPosition = false;
 
@@ -45,8 +47,8 @@
             {
                 if (YPosition > 0)
                 {
-                    positionToBeChecked.X = this.XPosition;
-                    positionToBeChecked.Y = this.YPosition - 1;
+                    positionToBeChecked.X = XPosition;
+                    positionToBeChecked.Y = YPosition - 1;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
                     if (isValidPosition)
@@ -61,8 +63,8 @@
             {
                 if (YPosition < Console.WindowHeight - 1)
                 {
-                    positionToBeChecked.X = this.XPosition;
-                    positionToBeChecked.Y = this.YPosition + 1;
+                    positionToBeChecked.X = XPosition;
+                    positionToBeChecked.Y = YPosition + 1;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
                     if (isValidPosition)
@@ -77,8 +79,8 @@
             {
                 if (XPosition > 0)
                 {
-                    positionToBeChecked.X = this.XPosition - 1;
-                    positionToBeChecked.Y = this.YPosition;
+                    positionToBeChecked.X = XPosition - 1;
+                    positionToBeChecked.Y = YPosition;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
                     if (isValidPosition)
@@ -93,8 +95,8 @@
             {
                 if (XPosition < Console.WindowWidth - 1)
                 {
-                    positionToBeChecked.X = this.XPosition + 1;
-                    positionToBeChecked.Y = this.YPosition;
+                    positionToBeChecked.X = XPosition + 1;
+                    positionToBeChecked.Y = YPosition;
                     isValidPosition = CheckForCollision(positionToBeChecked);
 
                     if (isValidPosition)
@@ -107,18 +109,18 @@
             }
         }
 
-        private void OnEnemyEncountered()
+        private static void OnEnemyEncountered()
         {
             if (EnemyEncountered != null)
             {
-                EnemyEncountered(this, new EventArgs());
+                EnemyEncountered(null, new EventArgs());
             }
         }
 
-        public bool CheckForCollision(Position pos)
+        public static bool CheckForCollision(Position pos)
         {
             //return true;
-            
+
             switch (World.WorldMatrix[pos.Y, pos.X])
             {
                 case CellState.EmptySpace:
@@ -152,12 +154,12 @@
             //check if its on shop, wall or some other object in the world
         }
 
-        public void BuyItem(byte noOfHero, byte slotInInventory, uint noOfItem)
+        public static void BuyItem(byte noOfHero, byte slotInInventory, uint noOfItem)
         {
             if (HeroesOfPlayer[noOfHero].Inventory[slotInInventory] == null)
             {
                 // Checks if player has enough money.
-                if (this.Gold < Shop.ShopItems[int.Parse(noOfItem.ToString())].Price)
+                if (Gold < Shop.ShopItems[int.Parse(noOfItem.ToString())].Price)
                 {
                     Console.WriteLine("You dont have enough money to buy this item.");
                 }
@@ -169,7 +171,7 @@
                     HeroesOfPlayer[noOfHero].DefensePoints += Shop.ShopItems[int.Parse(noOfItem.ToString())].AdditionalDP;
                     HeroesOfPlayer[noOfHero].HitPoints += Shop.ShopItems[int.Parse(noOfItem.ToString())].AdditionalHP;
                     HeroesOfPlayer[noOfHero].AbilityPowerPoints += Shop.ShopItems[int.Parse(noOfItem.ToString())].AdditionalAPP;
-                    this.Gold -= Shop.ShopItems[int.Parse(noOfItem.ToString())].Price;
+                    Gold -= Shop.ShopItems[int.Parse(noOfItem.ToString())].Price;
                 }
             }
             else if (HeroesOfPlayer[noOfHero].Inventory[slotInInventory] != null)
@@ -177,7 +179,7 @@
                 Console.WriteLine("The slot is already taken, try selling the item and try again.");
             }
         }
-        public void SellItem(byte slotInInventory, byte noOfHero)
+        public static void SellItem(byte slotInInventory, byte noOfHero)
         {
             if (HeroesOfPlayer[noOfHero].Inventory[slotInInventory] != null)
             {
@@ -185,7 +187,7 @@
                 HeroesOfPlayer[noOfHero].DefensePoints -= HeroesOfPlayer[noOfHero].Inventory[slotInInventory].AdditionalDP;
                 HeroesOfPlayer[noOfHero].HitPoints -= HeroesOfPlayer[noOfHero].Inventory[slotInInventory].AdditionalHP;
                 HeroesOfPlayer[noOfHero].AbilityPowerPoints -= HeroesOfPlayer[noOfHero].Inventory[slotInInventory].AdditionalAPP;
-                this.Gold += HeroesOfPlayer[noOfHero].Inventory[slotInInventory].Price;
+                Gold += HeroesOfPlayer[noOfHero].Inventory[slotInInventory].Price;
                 HeroesOfPlayer[noOfHero].Inventory[slotInInventory] = null;
             }
             else if (HeroesOfPlayer[noOfHero].Inventory[slotInInventory] == null)
