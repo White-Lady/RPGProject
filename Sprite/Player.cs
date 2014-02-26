@@ -11,8 +11,13 @@
         private static Position positionToBeChecked;
         private static Position oldPosition;
         public static event EventHandler EnemyEncountered;
-        public static int xPosition = 1;
-        public static int yPosition = 1;
+        private static int xPosition = 1;
+        private static int yPosition = 1;
+        public static Position PositionToBeChecked
+        {
+            get { return positionToBeChecked; }
+            set { positionToBeChecked = value; }
+        }
 
         public static Hero.Hero[] HeroesOfPlayer { get; set; }
         public static int Gold { get; set; }

@@ -31,10 +31,10 @@
             world.ReadWorldFromFile("testmap.txt");
 
             //Enemy test
-            World.WorldMatrix[30, 10] = CellState.Enemy;
+            World.WorldMatrix[5, 10] = CellState.Enemy;
 
-            Console.Write(world);
-            //DrawEngine.DrawWorld(World.WorldMatrix);
+            //Console.Write(world);
+            DrawEngine.DrawWorld(World.WorldMatrix);
 
 
             while (true)

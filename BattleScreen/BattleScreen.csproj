@@ -49,6 +49,10 @@
       <Project>{fe258cc8-9fe2-4bcc-98b3-14ecf491ab5c}</Project>
       <Name>DrawEngine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GameWorld\GameWorld.csproj">
+      <Project>{ab7a0d36-aebd-4005-a9a2-5f32964a9042}</Project>
+      <Name>GameWorld</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sprite\Sprite.csproj">
       <Project>{06ac061a-0a41-4f2a-a9de-7244365570bd}</Project>
       <Name>Sprite</Name>
