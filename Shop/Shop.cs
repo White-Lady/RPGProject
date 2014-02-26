@@ -5,6 +5,7 @@
     using Sprite;
     using DrawEngine;
     using Item;
+    using GameWorld;
     public static class Shop
     {
         public static List<Item> ShopItems = new List<Item>();
@@ -26,27 +27,38 @@
             DrawEngine.DrawShop();
             DrawEngine.PrintStringAtPosition(100, 3, "Your gold: " + Player.Gold.ToString());
             bool exit = false;
-            ConsoleKeyInfo buyOrSell;
+            ConsoleKeyInfo buySellOrExit;
             while (exit == false)
             {
-                buyOrSell = Console.ReadKey(true);
-                while (buyOrSell.Key != ConsoleKey.D1 && buyOrSell.Key != ConsoleKey.D2 && buyOrSell.Key != ConsoleKey.D0)
+                buySellOrExit = Console.ReadKey(true);
+                while (buySellOrExit.Key != ConsoleKey.D1 && buySellOrExit.Key != ConsoleKey.D2 && buySellOrExit.Key != ConsoleKey.D0)
                 {
                     Console.SetCursorPosition(2, 21);
                     Console.WriteLine("Invalid input, press 1 to buy, press 2 to sell, or 0 to exit.");
-                    buyOrSell = Console.ReadKey(); 
+                    buySellOrExit = Console.ReadKey(); 
                     Console.Clear();
                     DrawEngine.DrawShop();
                     DrawEngine.PrintStringAtPosition(100, 3, "Your gold: " + Player.Gold.ToString());
                 }
                 //Asking what to buy then buying
-                if (true)
+                if (buySellOrExit.Key == ConsoleKey.D1)
                 {
                     userInputBuy();
+                    Console.Clear();
+                    DrawEngine.DrawShop();
+                    DrawEngine.PrintStringAtPosition(100, 3, "Your gold: " + Player.Gold.ToString());
                 }
-                else
+                else if (buySellOrExit.Key == ConsoleKey.D2)
                 {
-
+                    userInputSell();
+                    Console.Clear();
+                    DrawEngine.DrawShop();
+                    DrawEngine.PrintStringAtPosition(100, 3, "Your gold: " + Player.Gold.ToString());
+                }
+                else if (buySellOrExit.Key == ConsoleKey.D0)
+                {
+                    DrawEngine.DrawWorld(World.WorldMatrix);
+                    exit = true;
                 }
             }
         }
@@ -56,7 +68,7 @@
             ConsoleKeyInfo whichHero;
             ConsoleKeyInfo whichSlot;
             Console.SetCursorPosition(2, 30);
-            Console.WriteLine("Which hero do you want to buy an item to: Fighter-1, Black Mage-2, White Mage-3");
+            Console.WriteLine("Which hero do you want to buy an item to: Fighter-1, Black Mage-2, White Mage-3?");
             whichHero = Console.ReadKey(true);
             while (whichHero.Key != ConsoleKey.D1 && whichHero.Key != ConsoleKey.D2 && whichHero.Key != ConsoleKey.D3)
             {
@@ -185,6 +197,11 @@
             Console.WriteLine("Which slot (between 1 and 6)?");
             Console.SetCursorPosition(2, 33);
             Console.Write(whichSlot.KeyChar);
+            SellItem(byte.Parse(whichSlot.KeyChar.ToString()), byte.Parse(whichHero.KeyChar.ToString()));
+            Console.SetCursorPosition(2, 34);
+            DrawEngine.EraseStringOnPosition(100, 3, 20);
+            DrawEngine.PrintStringAtPosition(100, 3, "Your gold: " + Player.Gold.ToString());
+
         }
         public static void BuyItem(byte noOfHero, byte slotInInventory, uint noOfItem)
         {
