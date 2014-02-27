@@ -14,10 +14,12 @@
         {
             new Pirat("The Black Beard", new Position(30, 10)),
             new Pirat("David Jones", new Position(40, 15)),
+            new Pirat("Bai Ivan", new Position(7, 4)),
             new Wolf("The white tooth", new Position(40, 17)),
             new Wolf("Rabid wolf", new Position(70, 25)),
             new Dragon("Smaug", new Position(100, 35)),
-            new Dragon("Smaug2", new Position(7, 7))
+            new Pirat("Dyrvoto", new Position(8, 35)),
+            new Dragon("Lamqta Spaska", new Position(110, 40))
         };
 
         public static void Battle(object obj, EventArgs arg)
