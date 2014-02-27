@@ -45,7 +45,7 @@
             {
                 foreach (var item in Player.HeroesOfPlayer)
                 {
-                    item.DefensePoints += arrSpells[2].Power + this.AbilityPowerPoints;
+                    item.DefensePoints += arrSpells[2].Power + this.AbilityPowerPoints; 
                 }
                 this.mana -= arrSpells[2].ManaCost;
             }

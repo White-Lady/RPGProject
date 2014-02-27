@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FinalFantasy.BattleScreen.BattleScreen">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>BattleScreen\BattleScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.DrawEngine.DrawEngine">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FQcEEAgIJBFAbAYAgQEQEQkxGAAMUAQIDBEAQBACJhQ=</HashCode>
+      <FileName>DrawEngine\DrawEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.FinalFantasy" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAEAAAAAABAAAABAAAAAA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.GameWorld.World">
+    <Position X="25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAAAAEAAAAAAAAECQAAAAEAAEAAAAAAAAAAAAIAAAE=</HashCode>
+      <FileName>GameWorld\World.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Item.GiantsTonic">
+    <Position X="17.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\GiantsTonic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Item.Item">
+    <Position X="20.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAQAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAgQA=</HashCode>
+      <FileName>Item\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Item.LongSword">
+    <Position X="23" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\LongSword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Item.MagicWand">
+    <Position X="19.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\MagicWand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Item.Vest">
+    <Position X="21.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\Vest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Shop.Shop">
+    <Position X="27" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAiAAAABCAAAAgAAAEAAAEAAAAAQAgBAAAAAAA=</HashCode>
+      <FileName>Shop\Shop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Enemy.Dragon">
+    <Position X="10.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sprite\Enemy\Dragon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Enemy.Enemy">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAEFAQIAIAEAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Sprite\Enemy\Enemy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Enemy.EnemyArmy">
+    <Position X="5.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAEAAAAAAAAgAAAAAAgAAAAIAIQ=</HashCode>
+      <FileName>Sprite\Enemy\EnemyArmy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Enemy.Pirat">
+    <Position X="7" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sprite\Enemy\Pirat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Enemy.PiratArmy">
+    <Position X="4.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAACAAAAAAAAACAAAgAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Sprite\Enemy\PiratArmy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Enemy.Wolf">
+    <Position X="8.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sprite\Enemy\Wolf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Enemy.WolfArmy">
+    <Position X="6.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAACAAAAAAAAAAAAAgAAAAAAAAAAAAAQQ=</HashCode>
+      <FileName>Sprite\Enemy\WolfArmy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Hero.BlackMage" Collapsed="true">
+    <Position X="0.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAQQAAAAAIAAAACA=</HashCode>
+      <FileName>Sprite\Hero\BlackMage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.45" />
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Hero.Fighter">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sprite\Hero\Fighter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.2" />
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Hero.Hero">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAkEFQAIAIEAAUADAABABwAQQAA=</HashCode>
+      <FileName>Sprite\Hero\Hero.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Hero.Spell">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAgAAAAYEAAEEDAAAAAgAAAAA=</HashCode>
+      <FileName>Sprite\Hero\Spell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Hero.WhiteMage" Collapsed="true">
+    <Position X="2.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAEAAAAQAAAAAIAAAACA=</HashCode>
+      <FileName>Sprite\Hero\WhiteMage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="FinalFantasy.Sprite.NumberOutOfRangeException">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Sprite\NumberOutOfRangeException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Player">
+    <Position X="15.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIAAAWAAAIBAAAAAAAAAAAAQIBEAAAEBAAACACggCAE=</HashCode>
+      <FileName>Sprite\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.Sprite.Sprite" Collapsed="true">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sprite\Sprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="FinalFantasy.Sprite.Position">
+    <Position X="14" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Sprite\Position.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="FinalFantasy.Sprite.Hero.ICast" Collapsed="true">
+    <Position X="1" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sprite\Hero\ICast.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FinalFantasy.Sprite.IEngage">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sprite\IEngage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="FinalFantasy.GameWorld.CellState">
+    <Position X="29" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAEAAAAAAAAAAAAAAACAAAQAAAAAAAAAAgA=</HashCode>
+      <FileName>GameWorld\CellState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
