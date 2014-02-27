@@ -48,14 +48,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BattleScreen\BattleScreen.csproj">
-      <Project>{473d5ace-94c2-4b1f-b72d-481b057b8d72}</Project>
-      <Name>BattleScreen</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DrawEngine\DrawEngine.csproj">
-      <Project>{fe258cc8-9fe2-4bcc-98b3-14ecf491ab5c}</Project>
-      <Name>DrawEngine</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GameWorld\GameWorld.csproj">
       <Project>{ab7a0d36-aebd-4005-a9a2-5f32964a9042}</Project>
       <Name>GameWorld</Name>

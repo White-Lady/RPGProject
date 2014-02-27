@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{38115DB8-4D28-4093-867D-F21E17727929}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{BBBAEB28-ACEA-4CE8-81B6-8554D12FE169}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Shop</RootNamespace>
-    <AssemblyName>Shop</AssemblyName>
+    <RootNamespace>FinalFantasy</RootNamespace>
+    <AssemblyName>FinalFantasy</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,14 +42,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Shop.cs" />
+    <Compile Include="BattleScreen\BattleScreen.cs" />
+    <Compile Include="DrawEngine\DrawEngine.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameWorld\CellState.cs" />
+    <Compile Include="GameWorld\World.cs" />
+    <Compile Include="Item\GiantsTonic.cs" />
+    <Compile Include="Item\Item.cs" />
+    <Compile Include="Item\LongSword.cs" />
+    <Compile Include="Item\MagicWand.cs" />
+    <Compile Include="Item\Vest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shop\Shop.cs" />
+    <Compile Include="Sprite\Enemy\Dragon.cs" />
+    <Compile Include="Sprite\Enemy\Enemy.cs" />
+    <Compile Include="Sprite\Enemy\EnemyArmy.cs" />
+    <Compile Include="Sprite\Enemy\Pirat.cs" />
+    <Compile Include="Sprite\Enemy\PiratArmy.cs" />
+    <Compile Include="Sprite\Enemy\Wolf.cs" />
+    <Compile Include="Sprite\Enemy\WolfArmy.cs" />
+    <Compile Include="Sprite\Hero\BlackMage.cs" />
+    <Compile Include="Sprite\Hero\Fighter.cs" />
+    <Compile Include="Sprite\Hero\Hero.cs" />
+    <Compile Include="Sprite\Hero\ICast.cs" />
+    <Compile Include="Sprite\Hero\Spell.cs" />
+    <Compile Include="Sprite\Hero\WhiteMage.cs" />
+    <Compile Include="Sprite\IEngage.cs" />
+    <Compile Include="Sprite\NumberOutOfRangeException.cs" />
+    <Compile Include="Sprite\Player.cs" />
+    <Compile Include="Sprite\Position.cs" />
+    <Compile Include="Sprite\Sprite.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sprite\Sprite.csproj">
-      <Project>{06ac061a-0a41-4f2a-a9de-7244365570bd}</Project>
-      <Name>Sprite</Name>
-    </ProjectReference>
+    <Content Include="testmap.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

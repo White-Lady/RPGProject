@@ -59,16 +59,6 @@
     <Compile Include="Sprite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GameWorld\GameWorld.csproj">
-      <Project>{ab7a0d36-aebd-4005-a9a2-5f32964a9042}</Project>
-      <Name>GameWorld</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Item\Item.csproj">
-      <Project>{5ed0410c-08d2-4c4f-a55e-43c980fb5e8d}</Project>
-      <Name>Item</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
