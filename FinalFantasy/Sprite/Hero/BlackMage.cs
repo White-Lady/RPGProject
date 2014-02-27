@@ -6,20 +6,30 @@
         private int mana;
         private int maxMana;
         private Spell[] arrSpells = new Spell[3];
-        public BlackMage(int hP, int aP, int dP, int mana, int abilityPower)
-            : base(20, 1, 3, 8)
+        public BlackMage(int hP = 150, int aP = 10, int dP = 20, int mana = 400, int abilityPower = 100)
+            : base(hP, aP, dP, abilityPower)
         {
-            this.mana = 15;
-            this.maxMana = this.mana;
+            this.MaxMana = mana;
+            this.mana = maxMana;
             arrSpells[0] = new Spell(5, 4, "Fire ball", true, false);
             arrSpells[1] = new Spell(10, 15, "Fire rain", false, false);
             arrSpells[2] = new Spell(5, 7, "Drain Health", true, false);
         }
 
-        public override void levelUp()
+        public override void LevelUp()
         {
 
         }
+
+        public int MaxMana 
+        {
+            get { return this.maxMana; }
+            private set
+            {
+                this.maxMana = value;
+            }
+        }
+
         public int castSpell(int numberOfSpell, int whoToApplyTo)
         {
             int magicDamage = 0;
@@ -42,5 +52,15 @@
         }
 
         //gain mana and lose mana functions
+
+        public override void ResetStats()
+        {
+            //public BlackMage(int hP = 150, int aP = 10, int dP = 20, int mana = 400, int abilityPower = 100)
+            this.HitPoints = 150;
+            this.AttackPoints = 10;
+            this.DefensePoints = 20;
+            this.AbilityPowerPoints = 100;
+            this.mana = this.MaxMana;            
+        }
     }
 }

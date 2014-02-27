@@ -69,7 +69,7 @@
             }
         }
 
-        public abstract void levelUp();
+        public abstract void LevelUp();
    
         public virtual int Attack()
         {
@@ -97,5 +97,7 @@
                 this.hitPoints -= damage;
             }
         }
+
+        public abstract void ResetStats();
     }
 }

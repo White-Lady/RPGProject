@@ -71,7 +71,6 @@
     <Compile Include="Sprite\NumberOutOfRangeException.cs" />
     <Compile Include="Sprite\Player.cs" />
     <Compile Include="Sprite\Position.cs" />
-    <Compile Include="Sprite\Sprite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="testmap.txt" />

@@ -182,56 +182,12 @@ namespace FinalFantasy.DrawEngine
             PrintCharAtPosition(posX, posY, charToBeDrawn, color);
         }
 
-        //private static void FillBuffer(CellState[,] world)
-        //{
-        //    buffer = new DisplayChar[world.GetLength(0), world.GetLength(1)];
-
-        //    for (int i = 0; i < world.GetLength(0); i++)
-        //    {
-        //        for (int j = 0; j < world.GetLength(1); j++)
-        //        {
-        //            char charToBeDrawn = ' ';
-        //            ConsoleColor elementColor = ConsoleColor.White;
-
-        //            switch (world[i, j])
-        //            {
-        //                case CellState.EmptySpace:
-        //                    elementColor = ConsoleColor.White;
-        //                    break;
-        //                case CellState.Enemy:
-        //                    charToBeDrawn = '*';
-        //                    elementColor = ConsoleColor.Red;
-        //                    break;
-        //                case CellState.Shop:
-        //                    charToBeDrawn = '$';
-        //                    elementColor = ConsoleColor.Yellow;
-        //                    break;
-        //                case CellState.Wall:
-        //                    charToBeDrawn = ';';
-        //                    elementColor = ConsoleColor.White;
-        //                    break;
-        //                default:
-        //                    break;
-        //            }
-
-        //            buffer[i, j].Character = charToBeDrawn;
-        //            buffer[i, j].Color = elementColor;
-        //        }
-        //    }
-        //}
-
         public static void DrawWorld(CellState[,] world)
         {
-            //Console.SetCursorPosition(0, 0);
-            //FillBuffer(world);
-
             for (int i = 0; i < world.GetLength(0); i++)
             {
                 for (int j = 0; j < world.GetLength(1); j++)
                 {
-                    //Console.ForegroundColor = buffer[i,j].Color;
-                    //Console.Write(buffer[i, j].Character);
-
                     char charToBeDrawn = ' ';
                     ConsoleColor elementColor = ConsoleColor.White;
 
@@ -260,8 +216,6 @@ namespace FinalFantasy.DrawEngine
                             break;
                     }
 
-                    //Console.ForegroundColor = elementColor;
-                    //Console.Write(charToBeDrawn);
                     PrintCharAtPosition(j, i, charToBeDrawn, elementColor);
                 }
             }
@@ -640,7 +594,3 @@ namespace FinalFantasy.DrawEngine
         }
     }
 }
-        //private static LongSword LongSwordItem = new LongSword();
-        //private static MagicWand MagicWandItem = new MagicWand();
-        //private static Vest VestItem = new Vest();
-        //private static GiantsTonic GiantsTonicItem = new GiantsTonic();

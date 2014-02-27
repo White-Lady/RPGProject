@@ -1,8 +1,6 @@
 ﻿namespace FinalFantasy
 {
     using System;
-    using DrawEngine;
-    using BattleScreen;
     using System.Threading;
     using Sprite;
     using Sprite.Enemy;
@@ -18,7 +16,8 @@
             new Pirat("David Jones", new Position(40, 15)),
             new Wolf("The white tooth", new Position(40, 17)),
             new Wolf("Rabid wolf", new Position(70, 25)),
-            new Dragon("Smaug", new Position(100, 35))
+            new Dragon("Smaug", new Position(100, 35)),
+            new Dragon("Smaug2", new Position(7, 7))
         };
 
         public static void Battle(object obj, EventArgs arg)

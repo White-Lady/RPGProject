@@ -63,13 +63,6 @@
                     positionToBeChecked.X = XPosition;
                     positionToBeChecked.Y = YPosition - 1;
                     isValidPosition = CheckForCollision(positionToBeChecked);
-
-                    //if (isValidPosition)
-                    //{
-                    //    oldPosition.X = XPosition;
-                    //    oldPosition.Y = YPosition;
-                    //    YPosition--;
-                    //}
                 }
             }
             else if (pressedKey.Key == ConsoleKey.DownArrow)
@@ -79,13 +72,6 @@
                     positionToBeChecked.X = XPosition;
                     positionToBeChecked.Y = YPosition + 1;
                     isValidPosition = CheckForCollision(positionToBeChecked);
-
-                    //if (isValidPosition)
-                    //{
-                    //    oldPosition.X = XPosition;
-                    //    oldPosition.Y = YPosition;
-                    //    YPosition++;
-                    //}
                 }
             }
             else if (pressedKey.Key == ConsoleKey.LeftArrow)
@@ -95,13 +81,6 @@
                     positionToBeChecked.X = XPosition - 1;
                     positionToBeChecked.Y = YPosition;
                     isValidPosition = CheckForCollision(positionToBeChecked);
-
-                    //if (isValidPosition)
-                    //{
-                    //    oldPosition.X = XPosition;
-                    //    oldPosition.Y = YPosition;
-                    //    XPosition--;
-                    //}
                 }
             }
             else if (pressedKey.Key == ConsoleKey.RightArrow)
@@ -111,13 +90,6 @@
                     positionToBeChecked.X = XPosition + 1;
                     positionToBeChecked.Y = YPosition;
                     isValidPosition = CheckForCollision(positionToBeChecked);
-
-                    //if (isValidPosition)
-                    //{
-                    //    oldPosition.X = XPosition;
-                    //    oldPosition.Y = YPosition;
-                    //    XPosition++;
-                    //}
                 }
             }
         }
@@ -140,8 +112,6 @@
 
         public static bool CheckForCollision(Position pos)
         {
-            //return true;
-
             switch (World.WorldMatrix[pos.Y, pos.X])
             {
                 case CellState.EmptySpace:
@@ -167,22 +137,6 @@
                 default:
                     return false;
             }
-
-
-            //if(map[pos.Y, pos.X] == Map.Shop)
-            //{
-            //      Shop();
-            //}
-
-            //To be checked the position on the world map
-            //if(map[pos.y, pos.x] == Map.Shop...Map.Enemy...Map.Empty....Map.Wall)
-            //if (World.WorldMatrix[pos.Y, pos.X] == CellState.Enemy/*pos.X == 10 && pos.Y == 30*/)
-            //{
-            //    OnStartBattle();
-            //    //BattleScreen.StartBattle();
-            //    //XPosition++;
-            //}
-            //check if its on shop, wall or some other object in the world
         }
 
         public static void FillHeroes()
@@ -193,6 +147,14 @@
             HeroesOfPlayer[2] = new WhiteMage(150, 10, 20, 400, 100);
         }
 
+        public static void ResetHeroesStats()
+        {
+            foreach (var hero in HeroesOfPlayer)
+            {
+                hero.IsDead = false;
+                hero.ResetStats();
+            }
+        }
 
     }
 }

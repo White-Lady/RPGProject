@@ -9,16 +9,16 @@
     public static class Shop
     {
         public static List<Item> ShopItems = new List<Item>();
-        private static LongSword LongSwordItem = new LongSword();
-        private static MagicWand MagicWandItem = new MagicWand();
-        private static Vest VestItem = new Vest();
-        private static GiantsTonic GiantsTonicItem = new GiantsTonic();
+        private static LongSword longSwordItem = new LongSword();
+        private static MagicWand magicWandItem = new MagicWand();
+        private static Vest vestItem = new Vest();
+        private static GiantsTonic giantsTonicItem = new GiantsTonic();
         private static void FillShop()
         {
-            ShopItems.Add(LongSwordItem);
-            ShopItems.Add(MagicWandItem);
-            ShopItems.Add(VestItem);
-            ShopItems.Add(GiantsTonicItem);
+            ShopItems.Add(longSwordItem);
+            ShopItems.Add(magicWandItem);
+            ShopItems.Add(vestItem);
+            ShopItems.Add(giantsTonicItem);
         }
         public static void OpenShop()
         {
@@ -43,14 +43,14 @@
                 //Asking what to buy then buying
                 if (buySellOrExit.Key == ConsoleKey.D1)
                 {
-                    userInputBuy();
+                    UserInputBuy();
                     Console.Clear();
                     DrawEngine.DrawShop();
                     DrawEngine.PrintStringAtPosition(100, 3, "Your gold: " + Player.Gold.ToString());
                 }
                 else if (buySellOrExit.Key == ConsoleKey.D2)
                 {
-                    userInputSell();
+                    UserInputSell();
                     Console.Clear();
                     DrawEngine.DrawShop();
                     DrawEngine.PrintStringAtPosition(100, 3, "Your gold: " + Player.Gold.ToString());
@@ -62,7 +62,7 @@
                 }
             }
         }
-        public static void userInputBuy()
+        public static void UserInputBuy()
         {
             ConsoleKeyInfo whichItem;
             ConsoleKeyInfo whichHero;
@@ -150,7 +150,7 @@
             DrawEngine.EraseStringOnPosition(100, 3, 20);
             DrawEngine.PrintStringAtPosition(100, 3, "Your gold: " + Player.Gold.ToString());
         }
-        public static void userInputSell()
+        public static void UserInputSell()
         {
             ConsoleKeyInfo whichHero;
             ConsoleKeyInfo whichSlot;

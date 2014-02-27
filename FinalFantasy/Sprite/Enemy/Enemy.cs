@@ -8,7 +8,6 @@
         public int HitPoints { get; set; }
         public int AttackPoints { get; set; }
         public int DefensePoints { get; set; }
-        //public bool IsHitted { get; set; }
         public bool IsDead { get; set; }
         public Position EnemyPosition { get; set; }
 
