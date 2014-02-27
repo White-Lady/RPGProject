@@ -24,7 +24,7 @@
   <Class Name="FinalFantasy.GameWorld.World">
     <Position X="25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AwAAAAEAAAAAAAAECQAAAAEAAEAAAAAAAAAAAAIAAAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAECQAAAAEAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>GameWorld\World.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,7 +66,7 @@
   <Class Name="FinalFantasy.Shop.Shop">
     <Position X="27" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAiAAAABCAAAAgAAAEAAAEAAAAAQAgBAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAiIAAAAAAAAQQAAQAAAABAAAAAAAgBAAAAAAA=</HashCode>
       <FileName>Shop\Shop.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -123,7 +123,7 @@
   <Class Name="FinalFantasy.Sprite.Hero.BlackMage" Collapsed="true">
     <Position X="0.5" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAQQAAAAAIAAAACA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAABAEAAAAQgAAAAIAAAACA=</HashCode>
       <FileName>Sprite\Hero\BlackMage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.45" />
@@ -131,7 +131,7 @@
   <Class Name="FinalFantasy.Sprite.Hero.Fighter">
     <Position X="4.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAQAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAABAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sprite\Hero\Fighter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="1.2" />
@@ -139,7 +139,7 @@
   <Class Name="FinalFantasy.Sprite.Hero.Hero">
     <Position X="2.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAkEFQAIAIEAAUADAABABwAQQAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAkEFQAJAIEAAEADAABABwAQQAA=</HashCode>
       <FileName>Sprite\Hero\Hero.cs</FileName>
     </TypeIdentifier>
     <Lollipop Orientation="Right" Position="0.1" />
@@ -154,10 +154,10 @@
   <Class Name="FinalFantasy.Sprite.Hero.WhiteMage" Collapsed="true">
     <Position X="2.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAEAAAAQAAAAAIAAAACA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAABAEAAAAQgAAAAIAAAACA=</HashCode>
       <FileName>Sprite\Hero\WhiteMage.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.1" />
+    <Lollipop Position="1.288" />
   </Class>
   <Class Name="FinalFantasy.Sprite.NumberOutOfRangeException">
     <Position X="10.5" Y="2.75" Width="1.5" />
@@ -169,15 +169,8 @@
   <Class Name="FinalFantasy.Sprite.Player">
     <Position X="15.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IIAAAWAAAIBAAAAAAAAAAAAQIBEAAAEBAAACACggCAE=</HashCode>
+      <HashCode>IIAAAWAAAIBAAAAAAAAAAAAQIBGAAAEBAAACACggCAE=</HashCode>
       <FileName>Sprite\Player.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="FinalFantasy.Sprite.Sprite" Collapsed="true">
-    <Position X="8.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sprite\Sprite.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="FinalFantasy.Sprite.Position">
@@ -187,11 +180,11 @@
       <FileName>Sprite\Position.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Interface Name="FinalFantasy.Sprite.Hero.ICast" Collapsed="true">
-    <Position X="1" Y="9" Width="1.5" />
+  <Interface Name="FinalFantasy.Sprite.Hero.ICastableOnEnemy" Collapsed="true">
+    <Position X="0.5" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sprite\Hero\ICast.cs</FileName>
+      <FileName>Sprite\Hero\ICastableOnEnemy.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="FinalFantasy.Sprite.IEngage">
@@ -199,6 +192,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sprite\IEngage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FinalFantasy.Sprite.Hero.ICastableOnParty" Collapsed="true">
+    <Position X="3" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sprite\Hero\ICastableOnParty.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="FinalFantasy.GameWorld.CellState">
