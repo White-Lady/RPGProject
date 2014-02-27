@@ -8,9 +8,28 @@
     {
         private static CellState[,] worldMatrix;
 
-        public World(int xLen, int yLen)
+        //Used to hold the instance of the World class
+        private static World instance;
+
+        private World(int xLen, int yLen)
         {
             WorldMatrix = new CellState[xLen, yLen];
+        }
+
+        /// <summary>
+        /// Checker for previously created instance of the World class.
+        /// </summary>
+        /// <param name="xLen"></param>
+        /// <param name="yLen"></param>
+        /// <returns></returns>
+        public static World CreateNewWorld(int xLen, int yLen)
+        {
+            if (instance == null)
+            {
+                instance = new World(xLen, yLen);
+            }
+
+            return instance;
         }
 
         public static CellState[,] WorldMatrix

@@ -27,7 +27,6 @@ namespace FinalFantasy.DrawEngine
         private const int whiteMageHeight = blackMageHeight + 9;
         private const int whiteMageWidth = 20;
         private const int arrowLength = 16;
-        private static int whosTunrItIs = 0;
         private const int gapBetweenOptions = 3;
         private const int gapBetweenTheBorderOfTheFightingOptionMenuAndOptions = 8;
         //private static DisplayChar[,] buffer;
@@ -156,7 +155,7 @@ namespace FinalFantasy.DrawEngine
             char charToBeDrawn = ' ';
             ConsoleColor color = ConsoleColor.White;
 
-            switch (World.WorldMatrix[posY,posX])
+            switch (World.WorldMatrix[posY, posX])
             {
                 case CellState.EmptySpace:
                     break;
@@ -233,7 +232,7 @@ namespace FinalFantasy.DrawEngine
             DrawFighter();
             DrawBlackMage();
             DrawWhiteMage();
-            DrawPlayerTurn();
+            //DrawPlayerTurn(0);
             FightingOptionsMenu();
         }
 
@@ -321,11 +320,13 @@ namespace FinalFantasy.DrawEngine
             }
         }
 
-        public static void DrawPlayerTurn()
+        public static void DrawPlayerTurn(int turn)
         {
+            int whosTunrItIs = turn;
+
             if (whosTunrItIs == 0)
             {
-                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength  +2, fighterHeight + (fighterHeight / 2) - 1);
+                Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength + 2, fighterHeight + (fighterHeight / 2) - 1);
                 Console.Write(playerTurn);
 
                 Console.SetCursorPosition(HeroesWindowWidth - fighterWidth - arrowLength + 2, whiteMageHeight + 2);

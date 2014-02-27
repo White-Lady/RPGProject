@@ -44,7 +44,7 @@
             Console.SetBufferSize(120, 50);
 
             //Create a world
-            World world = new World(Console.WindowHeight - 1, Console.WindowWidth - 1);
+            World world = World.CreateNewWorld(Console.WindowHeight - 1, Console.WindowWidth - 1);
             world.ReadWorldFromFile("testmap.txt");
 
             //Enemy test

@@ -66,6 +66,8 @@
                             heroOnTurn = 0;
                         }
 
+                        DrawEngine.DrawPlayerTurn(heroOnTurn);
+
                         Console.SetCursorPosition(6, 30);
                         Console.Write("Attacking...");
                         int damage = Player.HeroesOfPlayer[heroOnTurn].Attack();
@@ -75,7 +77,7 @@
                         Console.WriteLine("Enemy HP: {0}, STATE: {1}", enemy.HitPoints, enemy.IsDead);
                         heroOnTurn++;
                         playersTurn = false;
-                        DrawEngine.DrawPlayerTurn();
+                        
 
                     }
                     else if (pressedKey.Key == ConsoleKey.D5)
@@ -90,19 +92,24 @@
                     EraseAllPlayerHPs();
                     
                     int damage = enemy.Attack();
-                    Player.HeroesOfPlayer[enemyAttackCounter].Attacked(damage);
-                    playersTurn = true;
-
-                    while ((enemyAttackCounter < Player.HeroesOfPlayer.Length) &&
-                        (Player.HeroesOfPlayer[enemyAttackCounter].IsDead == true))
-                    {
-                        enemyAttackCounter++;
-                    }
 
                     if (enemyAttackCounter >= Player.HeroesOfPlayer.Length)
                     {
                         enemyAttackCounter = 0;
                     }
+
+                    for (int i = enemyAttackCounter; i < Player.HeroesOfPlayer.Length; i++)
+                    {
+                        if (Player.HeroesOfPlayer[i].IsDead == false)
+                        {
+                            enemyAttackCounter = i;
+                            break;
+                        }
+                    }
+
+                    Player.HeroesOfPlayer[enemyAttackCounter].Attacked(damage);
+                    enemyAttackCounter++;
+                    playersTurn = true;
 
                     if (Player.HeroesOfPlayer[0].IsDead == true && Player.HeroesOfPlayer[1].IsDead == true &&
                     Player.HeroesOfPlayer[2].IsDead == true)
