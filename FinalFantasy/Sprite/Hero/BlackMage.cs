@@ -1,7 +1,7 @@
 ﻿namespace FinalFantasy.Sprite.Hero
 {
     using System;
-    public class BlackMage : Hero, ICast
+    public class BlackMage : Hero, ICastableOnEnemy
     {
         private int mana;
         private int maxMana;
@@ -27,6 +27,7 @@
             private set
             {
                 this.maxMana = value;
+            }
         }
         public int CastSpell(int numberOfSpell, int whoToApplyTo)
         {

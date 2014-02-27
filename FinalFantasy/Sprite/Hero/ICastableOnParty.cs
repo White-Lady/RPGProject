@@ -1,6 +1,6 @@
 ﻿namespace FinalFantasy.Sprite.Hero
 {
-    public interface ICast
+    interface ICastableOnParty
     {
         void CastSpell(int numberOfSpell, int whoToApplyTo);
     }

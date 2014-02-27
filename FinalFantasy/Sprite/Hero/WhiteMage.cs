@@ -1,7 +1,7 @@
 ﻿namespace FinalFantasy.Sprite.Hero
 {
     using System;
-    public class WhiteMage : Hero, ICast
+    public class WhiteMage : Hero, ICastableOnParty
     {
         private int mana;
         private int maxMana;
@@ -34,7 +34,7 @@
             }
         }
 
-        public void castSpell(int numberOfSpell, int whoToApplyTo)
+        public void CastSpell(int numberOfSpell, int whoToApplyTo)
         {
             if (numberOfSpell == 1)
             {

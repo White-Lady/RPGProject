@@ -64,7 +64,8 @@
     <Compile Include="Sprite\Hero\BlackMage.cs" />
     <Compile Include="Sprite\Hero\Fighter.cs" />
     <Compile Include="Sprite\Hero\Hero.cs" />
-    <Compile Include="Sprite\Hero\ICast.cs" />
+    <Compile Include="Sprite\Hero\ICastableOnEnemy.cs" />
+    <Compile Include="Sprite\Hero\ICastableOnParty.cs" />
     <Compile Include="Sprite\Hero\Spell.cs" />
     <Compile Include="Sprite\Hero\WhiteMage.cs" />
     <Compile Include="Sprite\IEngage.cs" />
