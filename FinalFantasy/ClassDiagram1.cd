@@ -14,13 +14,6 @@
       <FileName>DrawEngine\DrawEngine.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FinalFantasy.FinalFantasy" Collapsed="true">
-    <Position X="10.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAEAAAAAABAAAABAAAAAA=</HashCode>
-      <FileName>Game.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="FinalFantasy.GameWorld.World">
     <Position X="25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
@@ -171,6 +164,13 @@
     <TypeIdentifier>
       <HashCode>IIAAAWAAAIBAAAAAAAAAAAAQIBGAAAEBAAACACggCAE=</HashCode>
       <FileName>Sprite\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinalFantasy.FinalFantasy">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAEAAAAAABAAAABAAAAAA=</HashCode>
+      <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="FinalFantasy.Sprite.Position">
