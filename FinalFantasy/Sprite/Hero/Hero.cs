@@ -69,7 +69,7 @@
             }
         }
 
-        public abstract void levelUp();
+        public abstract void LevelUp();
    
         public virtual int Attack()
         {

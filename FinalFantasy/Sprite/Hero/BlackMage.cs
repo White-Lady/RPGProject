@@ -16,7 +16,7 @@
             arrSpells[2] = new Spell(5, 7, "Drain Health", true, false);
         }
 
-        public override void levelUp()
+        public override void LevelUp()
         {
 
         }
