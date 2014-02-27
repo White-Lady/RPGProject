@@ -16,11 +16,11 @@
             arrSpells[2] = new Spell(5, 7, "Mass Shield", false, true); // Increases the defense points of the entire team by amount for turn
         }
 
-        public override void levelUp()
+        public override void LevelUp()
         {
 
         }
-        public void castSpell(int numberOfSpell, int whoToApplyTo)
+        public void CastSpell(int numberOfSpell, int whoToApplyTo)
         {
             if (numberOfSpell == 1)
             {

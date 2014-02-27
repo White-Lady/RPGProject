@@ -1,7 +1,7 @@
 ﻿namespace FinalFantasy.Sprite.Hero
 {
     using System;
-    public class BlackMage : Hero
+    public class BlackMage : Hero, ICast
     {
         private int mana;
         private int maxMana;
@@ -20,7 +20,7 @@
         {
 
         }
-        public int castSpell(int numberOfSpell, int whoToApplyTo)
+        public int CastSpell(int numberOfSpell, int whoToApplyTo)
         {
             int magicDamage = 0;
             if (numberOfSpell == 1)
@@ -42,5 +42,6 @@
         }
 
         //gain mana and lose mana functions
+
     }
 }

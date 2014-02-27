@@ -2,6 +2,6 @@
 {
     public interface ICast
     {
-        void castSpell(int numberOfSpell, int whoToApplyTo);
+        void CastSpell(int numberOfSpell, int whoToApplyTo);
     }
 }
